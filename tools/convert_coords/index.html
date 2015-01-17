@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GéoPicardie - Conversion de coordonnées</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+
+        <!-- Bootstrap styles -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+        <!-- Leaflet styles -->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="../bootstrap_narrow_page.css" />
+
+    </head>
+
+    <body>
+
+        <div id="wrap">
+            <div class="container">
+                
+                <div class="page-header">
+                    <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
+                    <small class="pull-right">Conversion de coordonnées</small></h1>
+                </div>
+
+                <ol class="breadcrumb">
+                    <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+                    <li><a href="..">Boîte à outils</a></li>
+                    <li class="active">Conversion de coordonnées</li>
+                </ol>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="well" style="padding: 0;">
+                            <div id="map" style="height: 350px"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <form>
+                            Système de coordonnées&nbsp;:
+                            <select id="input_srs">
+                            </select>
+                        </form>
+                        <br/>
+
+                        <div class="well well-sm" id="input_srs">
+                            <div class="input-group input-group-sm" id="input_group_x">
+                                <span class="input-group-addon">X (m)</span>
+                                <input id="input_x" type="text" class="form-control text-right" placeholder="X">
+                            </div>
+                            <br/>
+                            <div class="input-group input-group-sm" id="input_group_y">
+                                <span class="input-group-addon">Y (m)</span>
+                                <input id="input_y" type="text" class="form-control text-right" placeholder="Y">
+                            </div>
+                        </div>
+
+                        <form>
+                            Système de coordonnées&nbsp;:
+                            <select id="output_srs">
+                            </select>
+                        </form>
+                        <br/>
+
+                        <div class="well well-sm" id="output_srs">
+                            <div class="input-group input-group-sm" id="output_group_x">
+                                <span class="input-group-addon">X (m)</span>
+                                <input id="output_x" type="text" class="form-control text-right" placeholder="X">
+                            </div>
+                            <br/>
+                            <div class="input-group input-group-sm" id="output_group_y">
+                                <span class="input-group-addon">Y (m)</span>
+                                <input id="output_y" type="text" class="form-control text-right" placeholder="Y">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="container">
+                <p>Outil réalisé à l'aide de <a href="http://leafletjs.com/" target="_blank">Leaflet</a> et <a href="https://github.com/proj4js/proj4js" target="_blank">proj4js</a>.</p>
+            </div>
+        </div>
+
+
+
+        <!-- Leaflet library -->
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+        <!-- JQuery library -->
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+        <!-- Bootstrap library -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+        <!-- Proj4js library -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.3/proj4.js" type="text/javascript"></script>
+
+        <!-- Custom javascript -->
+        <script type="text/javascript" src="my_srs.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+
+    </body>
+</html>
