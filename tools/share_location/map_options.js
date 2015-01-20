@@ -36,7 +36,9 @@ var map_options = {
   "init_view": {
     "center": [49.8029,2.99012],
     "level": 15
-  }
+  },
+  "default_base_map_layer": "scan25",
+  "marker_coords": [49.8029,2.99012]
 };
 
 

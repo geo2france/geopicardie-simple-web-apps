@@ -37,28 +37,30 @@ $(document).ready(function() {
       }]
     };
 
+  updateMapFromLocationHash();
   var map = init_map("map", map_options, contextmenu_options, 0);
 
   var currentLayerId = base_map_layer_ids[Object.keys(map_options.base_map_layers)[0]];
   var subsetDefaultWidth = 0.002; // in degrees
   var markerLayer = null;
 
-  var marker = L.marker(map.getCenter(), {draggable: true}).addTo(map);
+  var marker = L.marker(map_options["marker_coords"], {draggable: true}).addTo(map);
   marker.on('dragend', movedMarker);
   map.on('move', movedMap);
   map.on('zoomend', movedMap);
   map.on('baselayerchange', baseLayerChanged);
 
-  updateMapFromLocationHash();
-
 
   // Initialise the map and its layers control
   function init_map(map_id, map_options, contextmenu_options, default_layer_index) {
 
+    default_layer_name = getLayerNameFromId(map_options["default_base_map_layer"]);
+
     // Definition of the layers available in the maps
     var base_layers = map_options.base_map_layers;
-    var base_layers_keys = Object.keys(base_layers)
-    var default_layer = base_layers[base_layers_keys[default_layer_index]]
+    var base_layers_keys = Object.keys(base_layers);
+    // var default_layer = base_layers[base_layers_keys[default_layer_index]];
+    var default_layer = base_layers[default_layer_name];
 
     // Creation of the map
     var map = L.map(map_id, contextmenu_options).setView(map_options.init_view.center, map_options.init_view.level);
@@ -244,26 +246,27 @@ $(document).ready(function() {
     $('#permalink').val(window.location.href);
   }
 
-  function updateMapFromLocationHash() {
+
+  function updateMapFromLocationHash2() {
+
     var hashParams = getHashParams();
 
     if( hashParams["layer"] !== undefined ) {
       var layerId = hashParams["layer"];
-      var newBaseLayer = map_options.base_map_layers[getLayerNameFromId(layerId)];
-      var currentBaseLayer = map_options.base_map_layers[getLayerNameFromId(currentLayerId)];
-      map.removeLayer(currentBaseLayer);
-      map.addLayer(newBaseLayer);
+      map_options["default_base_map_layer"] = layerId;
     }
 
     if( hashParams["map"] !== undefined ) {
       var mapView = hashParams["map"].split('/');
-      map.setView(new L.LatLng(parseFloat(mapView[1]), parseFloat(mapView[2])), parseInt(mapView[0]));
+      map_options["init_view"]["center"] = new L.LatLng(parseFloat(mapView[1]), parseFloat(mapView[2]));
+      map_options["init_view"]["level"] = parseInt(mapView[0]);
     }
 
     if( hashParams["marker"] !== undefined ) {
       var markerCoords = hashParams["marker"].split('/');
-      marker.setLatLng(new L.LatLng(parseFloat(markerCoords[0]), parseFloat(markerCoords[1])));
+      map_options["marker_coords"] = new L.LatLng(parseFloat(markerCoords[0]), parseFloat(markerCoords[1]));
     }
+
   }
 
 
