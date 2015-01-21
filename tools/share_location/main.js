@@ -59,7 +59,6 @@ $(document).ready(function() {
     // Definition of the layers available in the maps
     var base_layers = map_options.base_map_layers;
     var base_layers_keys = Object.keys(base_layers);
-    // var default_layer = base_layers[base_layers_keys[default_layer_index]];
     var default_layer = base_layers[default_layer_name];
 
     // Creation of the map
@@ -247,7 +246,7 @@ $(document).ready(function() {
   }
 
 
-  function updateMapFromLocationHash2() {
+  function updateMapFromLocationHash() {
 
     var hashParams = getHashParams();
 
@@ -272,8 +271,6 @@ $(document).ready(function() {
 
   function getLayerNameFromId(layerId) {
     for (var key in base_map_layer_ids) {
-      // console.log(key);
-      // console.log(base_map_layer_ids[key]);
       var id = base_map_layer_ids[key];
       if(id == layerId) {
         return key;
