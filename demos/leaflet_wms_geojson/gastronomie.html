@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GéoPicardie - WMS &amp; GeoJSON</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+
+  <!-- Bootstrap styles -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<!-- Leaflet styles -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+	<link rel="stylesheet" href="popup.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+
+	<!-- Bootstrap library -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Leaflet library -->
+	<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+	<script src="leaflet_oms/oms.min.js"></script>
+
+	<!-- JQuery library -->
+	<script src="jquery/jquery.min.js"></script>
+
+	<!-- Data to be displayed on the map (geojso file) -->
+	<script src="data/gastronomie.js" type="text/javascript"></script>
+
+	<!-- Custom Leaflet application -->
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			var map = L.map('map').setView([49.8, 2.7], 8);
+
+			L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+	    		layers: 'autres:basemaps_google',
+	    		format: 'image/png',
+	    		transparent: true,
+    			attribution: "OpenStreetMap"
+	    	}).addTo(map);
+			
+			/*L.tileLayer.wms("http://geobretagne.fr/wmsouvert?", {
+    		layers: 'imposm-bing',
+    		format: 'image/png',
+    		transparent: true,
+    		attribution: "OpenStreetMap"
+    	}).addTo(map);*/
+
+
+			function onEachFeature(feature, layer) {
+				var popupContent =
+					"<img alt=\"" + feature.properties.ImageAlt + "\" src=\"" + feature.properties.image + "\" class=\"thumbimage\">" +
+					"<div class=\"title_and_descr\"><div class=\"title\">" + feature.properties.name + "</div>" +
+					"<div class=\"descr\">" + feature.properties.description + "</div></div>";
+
+				if (feature.properties && feature.properties.popupContent) {
+					popupContent += feature.properties.popupContent;
+				}
+
+				layer.bindPopup(popupContent);
+			}
+
+			L.geoJson([locations], {
+
+				style: function (feature) {
+					return feature.properties && feature.properties.style;
+				},
+
+				onEachFeature: onEachFeature,
+
+				pointToLayer: function (feature, latlng) {
+					return L.marker(latlng);
+				}
+			}).addTo(map);
+		})
+	</script>
+</head>
+
+<body>
+	<div class="container">
+	  <div class="masthead">
+	    <h3 class="muted">GéoPicardie - Leaflet, flux WMS et GeoJSON</h3>
+      <p class="lead">Quelques exemples d'intégration des flux de données produits par le portail de GéoPicardie.</p>
+	    <div class="navbar">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <ul class="nav">
+	            <li class="active"><a href="gastronomie.html">Gastronomie</a></li>
+	            <li><a href="grande_guerre.html">Grande guerre</a></li>
+	            <li><a href="grande_guerre_details.html">Détails grande guerre</a></li>
+	            <li><a href="missions.html">Missions régionales du CR Picardie</a></li>
+	            <li><a href="amiens.html">Amiens</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div><!-- /.navbar -->
+	  </div>
+
+		<div class="row">
+		  <div class="span12">
+				<div class="well" style="padding: 0;">
+					<div id="map" style="height: 450px"></div>
+		  	</div>
+		  </div>
+		</div>
+	</div>
+	
+</body>
+</html>

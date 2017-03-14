@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GéoPicardie - Eolien</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+
+	  <!-- Bootstrap styles -->
+	  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+		<!-- Openlayers styles -->
+    <link rel="stylesheet" href="../lib/openlayers/theme/default/style.css" type="text/css">
+
+		<!-- Custom styles -->
+		<link rel="stylesheet" href="index.css" />
+		<!--link rel="stylesheet" href="../bootstrap_narrow_page.css" /-->
+
+	</head>
+
+	<body>
+    <div id="wrap">
+			<div class="container">
+
+				<div class="page-header">
+				  <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
+				  <small class="pull-right">L'éolien en Picardie</small></h1>
+				</div>
+
+				<ol class="breadcrumb">
+				  <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+				  <li><a href="..">Démonstrations</a></li>
+				  <li class="active">L'éolien en Picardie</li>
+				</ol>
+
+
+				<div class="row">
+
+		 		  <div class="col-md-7">
+						<div class="well" style="padding: 0;">
+							<div id="map" style="height: 500px"></div>
+				  	</div>
+				  </div>
+				  
+		 		  <div class="col-md-5">
+						<div class="panel-group" id="accordion">
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSearch">
+						          Recherche d'un lieu
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseSearch" class="panel-collapse collapse in">
+						      <div class="panel-body">
+										<form role="search">
+											<div class="input-group">
+									      <input id="place_name_input" type="text" class="form-control">
+									      <span class="input-group-btn">
+									        <button id="search_button" class="btn btn-default" type="submit">Rechercher</button>
+									      </span>
+									    </input>
+									    </div>
+											<img src="./img/animations/loading.gif" id="loading-indicator" style="display:none" />
+										</form>
+								    <p/>
+										<div class="list-group" id="search-result-list">
+										</div>
+						      </div>
+						    </div>
+						  </div>
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseZoom">
+						          Changement d'échelle
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseZoom" class="panel-collapse collapse">
+						      <div class="panel-body">
+										<div class="container">
+										  <a id="zoom_5k" href="#">Rue <span class="pull-right">(5.000<small> e</small>)</span></a><br/>
+										  <a id="zoom_25k" href="#">Bourg <span class="pull-right">(25.000<small> e</small>)</span></a><br/>
+										  <a id="zoom_100k" href="#">Agglomération <span class="pull-right">(100.000<small> e</small>)</span></a><br/>
+										</div>
+						      </div>
+						    </div>
+						  </div>
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseMarker">
+						          Couches de données
+						        </a>
+						      </h4>
+						    </div>
+						    <div id="collapseMarker" class="panel-collapse collapse">
+						      <div class="panel-body">
+										<div class="container" id="basemap_layer_selector">
+											<p>Fonds de carte&nbsp;:</p>
+											<div class="radio">
+											  <label>
+											    <input type="radio" name="optionsRadios" id="optionsRadios1" value="" checked>
+											    Aucun
+											  </label>
+											</div>
+											<div class="radio">
+											  <label>
+											    <input type="radio" name="optionsRadios" id="optionsRadios1" value="IGN Scan25">
+											    IGN Scan25
+											  </label>
+											</div>
+											<div class="radio">
+											  <label>
+											    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Fond OSM apparence Google">
+											    Fond libre apparence Google <small>(OpenStreetMap)</small>
+											  </label>
+											</div>
+											<div class="radio">
+											  <label>
+											    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Fond OSM GéoPicardie (expérimental)">
+											    Fond libre GéoPicardie expérimental <small>(OpenStreetMap)</small>
+											  </label>
+											</div>
+											<div class="radio">
+											  <label>
+											    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Occupation du sol GéoPicardie (2010)">
+											    Occupation du sol GéoPicardie (2010)
+											  </label>
+											</div>
+											<div class="radio">
+											  <label>
+											    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Phototographie aérienne composite (2008-2009)">
+											    Phototographie aérienne composite (2008-2009)
+											  </label>
+											</div>
+										</div>
+										<hr/>
+										<div class="container" id="overlay_selectors">
+											<p>Données sur l'éolien&nbsp;:</p>
+											<div class="checkbox">
+											  <label>
+											    <input type="checkbox" value="mats">
+											    Mâts construits <small>(services des DDT et DDTM)</small>
+											  </label>
+											</div>
+											<div class="checkbox">
+											  <label>
+											    <input type="checkbox" value="zones_fav" checked>
+											    Zones favorables <small>(service Prodige Picardie)</small>
+											  </label>
+											</div>
+											<div class="checkbox">
+											  <label>
+											    <input type="checkbox" value="zones_fav_sous_conditions" checked>
+											    Zones favorables sous conditions <small>(service de Prodige Picardie)</small>
+											  </label>
+											</div>
+											<div class="checkbox">
+											  <label>
+											    <input type="checkbox" value="vent">
+											    Force du vent <small>(portail de GéoPicardie)</small>
+											  </label>
+											</div>
+										</div>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+    <div id="footer">
+      <div class="container">
+        <p><small>Exemple réalisé à l'aide de <a href="http://www.openlayers.org/" target="_blank">Openlayers</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, <a href="http://www.geonames.org/" target="_blank">geonames.org</a> et <a href="http://wiki.openstreetmap.org/wiki/Nominatim" target="_blank">Nominatim</a>.</small></p>
+      </div>
+    </div>
+
+		<!-- OpenLayers and proj4 library -->
+    <script src="../lib/openlayers/OpenLayers.js"></script>
+    <script src="../lib/proj4js/proj4js-combined.js"></script>
+
+
+		<!-- JQuery library -->
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+		<!-- Bootstrap library -->
+	  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+		<!-- Custom javascript -->
+	  <script type="text/javascript" src="main.js"></script>
+	  <script type="text/javascript" src="./geopic.searchengine/geopic.searchengine.js"></script>
+	  <script type="text/javascript" src="./geopic.searchengine/geopic.searchengine_geonames.js"></script>
+	  <script type="text/javascript" src="map_options.js"></script>
+	  <script type="text/javascript" src="search_engine_options.js"></script>
+
+
+	</body>
+</html>

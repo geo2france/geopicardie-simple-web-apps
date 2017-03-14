@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GéoPicardie - Grande Guerre</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+
+	  <!-- Bootstrap styles -->
+	  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+		<!-- Leaflet styles -->
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<link rel="stylesheet" href="popup.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+
+		<!-- Bootstrap library -->
+	  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Leaflet library -->
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+		<script src="../lib/leaflet_oms/oms.min.js"></script>
+
+		<!-- JQuery library -->
+		<script src="../lib/jquery/jquery.min.js"></script>
+
+		<!-- Custom Leaflet application -->
+		<script type="text/javascript">
+
+			var mapLayersOptions = {
+				layers: [
+					{
+						name: 'osm_layer',
+						title: 'Carte OpenStreetMap',
+						baseLayer: true,
+						type: 'WMS',
+						url: 'http://www.geopicardie.fr/geoserver/wms?',
+	    			wmsLayers: 'autres:basemaps_google',
+		    		format: 'image/jpeg',
+		    		attribution: 'OpenStreetMap - GéoPicardie',
+		    		addToLayerControl: true
+		    	}, /*{
+						name: 'osm_layer',
+						title: 'Carte OpenStreetMap',
+						baseLayer: true,
+						type: 'WMS',
+						url: 'http://geobretagne.fr/wmsouvert?',
+	    			wmsLayers: 'imposm-default',
+		    		format: 'image/jpeg',
+		    		attribution: 'OpenStreetMap',
+		    		addToLayerControl: true
+		    	},*/ {
+		    		name: 'ortho_layer',
+						title: 'Orthophotographies 2008-2009 - GéoPicardie',
+						baseLayer: true,
+						type: 'WMS',
+						url: 'http://www.geopicardie.fr/geoserver/wms?',
+	    			wmsLayers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
+		    		format: 'image/jpeg',
+		    		attribution: 'GéoPicardie',
+		    		addToLayerControl: true
+		    	}, {
+		    		name: 'marker_layer',
+						title: 'Sites de la Grande Guerre',
+						baseLayer: false,
+						type: 'GeoJSON/Simple URL',
+						url: './data/grande_guerre.js',
+		    		attribution: 'Somme Tourisme',
+		    		addToLayerControl: false,
+		    		markerCluster: {
+		    			on: true,
+		    			distance: 25,
+		    			color: '',
+		    			thickness: 2
+		    		},
+		    		icons: [
+		    			{
+		    				id: 'default',
+		    				filter: '',
+		    				urls: {
+				    			normal: '',
+				    			cluster: '',
+				    			active: '',
+		    				}
+		    			}
+		    		],
+		    		popupContentTemplate: ''
+		    	}
+				]
+			};
+
+			$(document).ready(function() {
+
+				var map = L.map('map').setView([49.8, 2.7], 8);
+				var subsetsOfFeatures = {"Toutes": []};
+				var subsetDefaultWidth = 0.1; // in degrees
+
+				osm_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+	    		layers: 'autres:osm_geopicardie_bright',
+	    		format: 'image/png',
+	    		transparent: true,
+	    		attribution: "OpenStreetMap - GéoPicardie"
+	    	});
+
+	/*			osm_layer = L.tileLayer.wms("http://geobretagne.fr/wmsouvert?", {
+	    		layers: 'imposm-bing',
+	    		format: 'image/png',
+	    		transparent: true,
+	    		attribution: "OpenStreetMap"
+	    	});*/
+
+				ortho_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+	    		layers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
+	    		format: 'image/jpeg',
+	    		transparent: true,
+	    		attribution: "Orthophotographies 2008-2009 - GéoPicardie"
+	    	});
+
+				var baseMaps = {
+				    "Carte OpenStreetMap": osm_layer,
+				    "Photographies aériennes": ortho_layer
+				};
+
+				osm_layer.addTo(map);
+				L.control.layers(baseMaps).addTo(map);
+
+
+	  		var lightIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-bright.png'}});
+	  		var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon.png'}});
+	  		var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-dark.png'}});
+	/*  		var lightIcon  = L.Icon.Default.extend({options: {
+	  			iconUrl: 'images/casque_40_clair.png',
+	  		  iconSize: [40, 29],
+	    		iconAnchor: [20, 20],
+	    		shadowUrl: 'images/casque_40_ombre.png',
+	    		shadowSize: [40, 20],
+	    		shadowAnchor: [14, 10]}});
+	  		var normalIcon  = L.Icon.Default.extend({options: {
+	  			iconUrl: 'images/casque_40.png',
+	  		  iconSize: [40, 29],
+	    		iconAnchor: [20, 20],
+	    		shadowUrl: 'images/casque_40_ombre.png',
+	    		shadowSize: [40, 20],
+	    		shadowAnchor: [10, 10]}});
+	  		var darkIcon  = L.Icon.Default.extend({options: {
+	  			iconUrl: 'images/casque_40_sombre.png',
+	  		  iconSize: [40, 29],
+	    		iconAnchor: [20, 20],
+	    		shadowUrl: 'images/casque_40_ombre.png',
+	    		shadowSize: [40, 20],
+	    		shadowAnchor: [10, 10]}});*/
+				var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 25});
+
+				$.getJSON('data/grande_guerre.js', function(data) {
+
+					var bounds = new L.LatLngBounds();
+
+	    		$.each( data.features, function( i, feature ) {
+						var loc = new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+						bounds.extend(loc);
+
+						var marker = new L.Marker(loc, {icon: new lightIcon()});
+						marker.desc = feature.properties.name;
+						marker.title = feature.properties.name;
+
+						map.addLayer(marker);
+						oms.addMarker(marker);
+
+	   				$.each( feature.properties.categories, function( i, cat ) {
+							var subsetName = "category/" + cat;
+
+							if(!(subsetName in subsetsOfFeatures)) {
+								subsetsOfFeatures[subsetName] = [];
+							}
+
+							subsetsOfFeatures[subsetName].push(feature);
+						});
+		
+	   				$.each( feature.properties.areas, function( i, area ) {
+							var subsetName = "area/" + area;
+
+							if(!(subsetName in subsetsOfFeatures)) {
+								subsetsOfFeatures[subsetName] = [];
+							}
+
+							subsetsOfFeatures[subsetName].push(feature);
+						});
+						
+						subsetsOfFeatures["Toutes"].push(feature);
+	  			});
+
+					map.fitBounds(bounds);
+				})
+				.fail(function( jqxhr, textStatus, error ) {
+					console.log( textStatus + ', ' + error);
+	//				console.log( jqxhr.responseText);
+				})
+
+
+				var popup = new L.Popup({closeButton: true, offset: new L.Point(0.5, -24)});
+				oms.addListener('click', function(marker) {
+					popup.setContent(marker.desc);
+					popup.setLatLng(marker.getLatLng());
+
+					// Custom property in order to track the color/state of the marker
+					if (popup.myMarker !== undefined && popup.myMarker !== null && popup.myMarker !== marker) {
+						if ("on" === popup.spiderState) {
+							popup.myMarker.setIcon(new normalIcon());
+						}
+						else {
+							popup.myMarker.setIcon(new lightIcon());					
+						}
+					}
+
+					marker.setIcon(new darkIcon());
+
+					if (popup.myMarker === undefined || (popup.myMarker !== undefined && popup.myMarker !== marker)) {
+						map.openPopup(popup);
+					}
+
+					popup.myMarker = marker;
+				});
+				oms.addListener('spiderfy', function(markers) {
+					for (var i = 0, len = markers.length; i < len; i ++) {
+						markers[i].setIcon(new normalIcon());
+					}
+					map.closePopup();
+					// Custom property in order to track the color/state of the marker
+					popup.spiderState = "on";
+					popup.myMarker = null;
+				});
+				oms.addListener('unspiderfy', function(markers) {
+					for (var i = 0, len = markers.length; i < len; i ++) {
+						markers[i].setIcon(new lightIcon());
+					}
+					// Custom property in order to track the color/state of the marker
+					popup.spiderState = "off";
+				});
+
+				map.addEventListener('popupclose', function(e){
+					if ("on" === e.popup.spiderState) {
+						e.popup.myMarker.setIcon(new normalIcon());
+					}
+					else {
+						e.popup.myMarker.setIcon(new lightIcon());					
+					}
+					popup.myMarker = null;
+				});
+
+				subsetLabels = [
+					{ name: "all", label: "Somme", subsetName: "Toutes"},
+					{ name: "albert", label: "Albert", subsetName: "area/Albert"},
+					{ name: "amiens", label: "Amiens", subsetName: "area/Amiens"},
+					{ name: "baie_somme", label: "Baie de Somme", subsetName: "area/Baie de Somme"},
+					{ name: "doullens", label: "Doullens", subsetName: "area/Doullens"},
+					{ name: "peronne", label: "Péronne", subsetName: "area/Péronne"}
+				];
+				$.each( subsetLabels, function( i, subsetLabel ) {
+					var menuItemId = "nav-area-" + subsetLabel.name;
+					var htmlCode = '<li class="list-group-item"><a id="' + menuItemId + '" href="#">' + subsetLabel.label + '</a></li>';
+
+					// Add a menu item for the subset name
+					$("#area-list").append(htmlCode);
+
+					// Set the function to be called by the click event on the menu item
+					$("#"+menuItemId).on("click", function(e) {
+			      e.preventDefault();
+			      zoomToSubsetOfFeatures(subsetLabel.subsetName);
+			    });
+				});
+
+				function zoomToSubsetOfFeatures(subsetOfFeaturesName){
+					console.log(subsetOfFeaturesName);
+					if (!(subsetOfFeaturesName in subsetsOfFeatures)) return;
+
+					var subsetBounds = new L.LatLngBounds();
+
+	    		$.each( subsetsOfFeatures[subsetOfFeaturesName], function( i, feature ) {
+						var loc = new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+						subsetBounds.extend(loc);
+	  			});
+
+	  			var cx = (subsetBounds.getWest()+subsetBounds.getWest())/2.;
+	  			var cy = (subsetBounds.getNorth()+subsetBounds.getSouth())/2.;
+	    		if(subsetBounds.getEast()-subsetBounds.getWest() < subsetDefaultWidth) {
+	    			subsetBounds.extend(new L.LatLng(cy, cx - (subsetDefaultWidth/2.)));
+	    			subsetBounds.extend(new L.LatLng(cy, cx + (subsetDefaultWidth/2.)));
+	    		}
+	    		if(subsetBounds.getNorth()-subsetBounds.getSouth() < subsetDefaultWidth) {
+	    			subsetBounds.extend(new L.LatLng(cy - (subsetDefaultWidth/2.), cx));
+	    			subsetBounds.extend(new L.LatLng(cy + (subsetDefaultWidth/2.), cx));
+	    		}
+
+					map.fitBounds(subsetBounds);
+				};
+
+			});
+
+	  </script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="page-header">
+			  <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
+			  <small class="pull-right">Sites de la Grande Guerre - 1</small></h1>
+			</div>
+
+			<ol class="breadcrumb">
+			  <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+			  <li><a href="..">Démonstrations</a></li>
+			  <li class="active">Sites de la Grande Guerre - 1</li>
+			</ol>
+
+			<div class="row">
+		 		<div class="col-md-3">
+					<ul id="area-list" class="list-group">
+					  <li class="list-group-item">Liste des zones</li>
+					</ul>
+			  </div>
+			  <div class="col-md-9">
+					<div class="well" style="padding: 0;">
+						<div id="map" style="height: 450px"></div>
+			  	</div>
+			  </div>
+			</div>
+
+		</div>
+	</body>
+</html>

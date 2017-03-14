@@ -1,0 +1,33 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "idpole": "60500001", "Pole_nom": "Zone industrielle du Plessis-Belleville" }, "geometry": { "type": "Point", "coordinates": [ 2.752381149935431, 49.101803042374158 ] } },
+{ "type": "Feature", "properties": { "idpole": "60488001", "Pole_nom": "Parc d'Activités de Noyon-Passel" }, "geometry": { "type": "Point", "coordinates": [ 2.965376256490988, 49.551413792200492 ] } },
+{ "type": "Feature", "properties": { "idpole": "80714001", "Pole_nom": "ZA du Gros Jacques" }, "geometry": { "type": "Point", "coordinates": [ 1.466707446773324, 50.063339571145576 ] } },
+{ "type": "Feature", "properties": { "idpole": "60342002", "Pole_nom": "Parc d'activité des cailloux de Sailleville" }, "geometry": { "type": "Point", "coordinates": [ 2.445962502447086, 49.30910314868099 ] } },
+{ "type": "Feature", "properties": { "idpole": "02226001", "Pole_nom": "Parc du plateau" }, "geometry": { "type": "Point", "coordinates": [ 3.273058531923358, 49.336202936342247 ] } },
+{ "type": "Feature", "properties": { "idpole": "60380001", "Pole_nom": "Zone d'activités Le Feignet" }, "geometry": { "type": "Point", "coordinates": [ 3.090425994036981, 49.138808188649406 ] } },
+{ "type": "Feature", "properties": { "idpole": "02805001", "Pole_nom": "Z.A.C. des Etomelles" }, "geometry": { "type": "Point", "coordinates": [ 3.368181665554858, 49.372706149519814 ] } },
+{ "type": "Feature", "properties": { "idpole": "02722001", "Pole_nom": "Taillepieds & Entrepots" }, "geometry": { "type": "Point", "coordinates": [ 3.337164220526194, 49.394591396250675 ] } },
+{ "type": "Feature", "properties": { "idpole": "6047111", "Pole_nom": "INOVIA" }, "geometry": { "type": "Point", "coordinates": [ 2.999922626470965, 49.599620633705818 ] } },
+{ "type": "Feature", "properties": { "idpole": "02722004", "Pole_nom": "Parc tertiaire GOURAUD" }, "geometry": { "type": "Point", "coordinates": [ 3.318815216358321, 49.375809557723059 ] } },
+{ "type": "Feature", "properties": { "idpole": "02408999", "Pole_nom": "Entrepôt logistique" }, "geometry": { "type": "Point", "coordinates": [ 3.656082391002478, 49.577224244650893 ] } },
+{ "type": "Feature", "properties": { "idpole": "60409001", "Pole_nom": "Parc d'activité de la coix blanche" }, "geometry": { "type": "Point", "coordinates": [ 2.467225725456864, 49.301457155667144 ] } },
+{ "type": "Feature", "properties": { "idpole": "60658001", "Pole_nom": "Zone d'activités de Vauciennes" }, "geometry": { "type": "Point", "coordinates": [ 3.014933304456993, 49.237486545783995 ] } },
+{ "type": "Feature", "properties": { "idpole": "60619001", "Pole_nom": "ZA de Silly-le-Long" }, "geometry": { "type": "Point", "coordinates": [ 2.767854099307836, 49.113118882393543 ] } },
+{ "type": "Feature", "properties": { "idpole": "60463005", "Pole_nom": "Quai de l'Oise" }, "geometry": { "type": "Point", "coordinates": [ 2.504487521426456, 49.284699006181476 ] } },
+{ "type": "Feature", "properties": { "idpole": "80318001", "Pole_nom": "ZAC des Hauts Plateaux" }, "geometry": { "type": "Point", "coordinates": [ 2.062499624203536, 50.036313763291552 ] } },
+{ "type": "Feature", "properties": { "idpole": "60587001", "Pole_nom": "ZA NORD" }, "geometry": { "type": "Point", "coordinates": [ 2.611975433751675, 49.349836427915911 ] } },
+{ "type": "Feature", "properties": { "idpole": "60341001", "Pole_nom": "Zone industrielle" }, "geometry": { "type": "Point", "coordinates": [ 2.736301299951565, 49.092844153944306 ] } },
+{ "type": "Feature", "properties": { "idpole": "60341002", "Pole_nom": "Zone industrielle Est" }, "geometry": { "type": "Point", "coordinates": [ 2.752988047171582, 49.086769503249549 ] } },
+{ "type": "Feature", "properties": { "idpole": "60509001", "Pole_nom": "ZI de Pont-Brenouille" }, "geometry": { "type": "Point", "coordinates": [ 2.57885230170844, 49.304992575270788 ] } },
+{ "type": "Feature", "properties": { "idpole": "60670001", "Pole_nom": "Parc ALATA" }, "geometry": { "type": "Point", "coordinates": [ 2.500206660837096, 49.264125781362821 ] } },
+{ "type": "Feature", "properties": { "idpole": "60684003", "Pole_nom": "Zone du Grand Pré" }, "geometry": { "type": "Point", "coordinates": [ 2.483167223937582, 49.281413040925102 ] } },
+{ "type": "Feature", "properties": { "idpole": "60213001", "Pole_nom": "Aérodrome du Plessis Belleville" }, "geometry": { "type": "Point", "coordinates": [ 2.734555752798836, 49.108391748561836 ] } },
+{ "type": "Feature", "properties": { "idpole": "60176001", "Pole_nom": "Zone d'activités \"Portes du Valois\"" }, "geometry": { "type": "Point", "coordinates": [ 2.90984234075682, 49.228237518918711 ] } },
+{ "type": "Feature", "properties": { "idpole": "60508001", "Pole_nom": "ZA de Moru-Pontpoint" }, "geometry": { "type": "Point", "coordinates": [ 2.676934333525316, 49.312812279238152 ] } },
+{ "type": "Feature", "properties": { "idpole": "60446001", "Pole_nom": "ZAC du Ferrier" }, "geometry": { "type": "Point", "coordinates": [ 2.790936504353607, 49.134152042064194 ] } }
+]
+}

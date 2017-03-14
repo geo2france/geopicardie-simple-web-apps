@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewContext xmlns="http://www.opengis.net/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.0" id="transport" xsi:schemaLocation="http://www.opengis.net/context http://schemas.opengis.net/context/1.1.0/context.xsd">
+  <General>
+    <Window width="1373" height="776"/>
+    <BoundingBox minx="609657.770133389975" miny="6938878.14527050033" maxx="714605.753278229968" maxy="6998193.24717910029" SRS="EPSG:2154"/>
+    <Title/>
+    <Extension>
+      <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+    </Extension>
+  </General>
+  <LayerList>
+    <Layer queryable="0" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>geopicardie:picardie_scan25</Name>
+      <Title>Scan25 de l'IGN sur la Picardie</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+        <Format>application/atom xml</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/openlayers</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss xml</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml</Format>
+        <Format>application/vnd.google-earth.kml xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.google-earth.kmz xml</Format>
+        <Format>application/vnd.google-earth.kmz+xml</Format>
+        <Format>application/vnd.google-earth.kmz;mode=networklink</Format>
+        <Format>atom</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/gif;subtype=animated</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png8</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg</Format>
+        <Format>image/svg xml</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>kml</Format>
+        <Format>kmz</Format>
+        <Format>openlayers</Format>
+        <Format>rss</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=picardie_scan25"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:opacity xmlns:ol="http://openlayers.org/context">0.7</ol:opacity>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="0" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms"/>
+      </Server>
+      <Name>ign_geofla_departements</Name>
+      <Title>Départements (GeoFLA - polygones)</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>dept_trait_noir_picardie</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/autres/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_geofla_departements"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>reg22:reseau_TER_100_L93</Name>
+      <Title>Réseau TER de Picardie</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+        <Format>application/atom xml</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/openlayers</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss xml</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml</Format>
+        <Format>application/vnd.google-earth.kml xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.google-earth.kmz xml</Format>
+        <Format>application/vnd.google-earth.kmz+xml</Format>
+        <Format>application/vnd.google-earth.kmz;mode=networklink</Format>
+        <Format>atom</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/gif;subtype=animated</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png8</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg</Format>
+        <Format>image/svg xml</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>kml</Format>
+        <Format>kmz</Format>
+        <Format>openlayers</Format>
+        <Format>rss</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=reseau_TER_100_L93"/>
+          </LegendURL>
+        </Style>
+        <Style current="1">
+          <Name>reseau_ter_type_ligne</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=reseau_TER_100_L93&amp;style=reseau_ter_type_ligne"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>reg22:points_arret_LRR</Name>
+      <Title>Points d'arrêt routiers du réseau de transport régional picard</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+        <Format>application/atom xml</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/openlayers</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss xml</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml</Format>
+        <Format>application/vnd.google-earth.kml xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.google-earth.kmz xml</Format>
+        <Format>application/vnd.google-earth.kmz+xml</Format>
+        <Format>application/vnd.google-earth.kmz;mode=networklink</Format>
+        <Format>atom</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/gif;subtype=animated</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png8</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg</Format>
+        <Format>image/svg xml</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>kml</Format>
+        <Format>kmz</Format>
+        <Format>openlayers</Format>
+        <Format>rss</Format>
+      </FormatList>
+      <StyleList>
+        <Style current="1">
+          <Name>arret_routier_type_arret_ligne_etiquette</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=points_arret_LRR"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>reg22:sommet_ferrovaire4TER_gare_avril2012</Name>
+      <Title>Gares et points d'arrêts ferroviaires du réseau TER picard (avril 2012)</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+        <Format>application/atom xml</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/openlayers</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss xml</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml</Format>
+        <Format>application/vnd.google-earth.kml xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>application/vnd.google-earth.kmz xml</Format>
+        <Format>application/vnd.google-earth.kmz+xml</Format>
+        <Format>application/vnd.google-earth.kmz;mode=networklink</Format>
+        <Format>atom</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/gif;subtype=animated</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png8</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg</Format>
+        <Format>image/svg xml</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>kml</Format>
+        <Format>kmz</Format>
+        <Format>openlayers</Format>
+        <Format>rss</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>point</Name>
+          <Title>Carr? rouge</Title>
+          <Abstract>A 6 pixel square with a yellow fill and black stroke</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>cercle_jaune</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=cercle_jaune"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>cercle_vert</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=cercle_vert"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>logo_sncf</Name>
+          <Title>Logo SCNF</Title>
+          <Abstract>Train station icon (pink)</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=logo_sncf"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>gare_pictogramme_violet</Name>
+          <Title>Gare - Pictogramme violet</Title>
+          <Abstract>Gare - Pictogramme violet</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=gare_pictogramme_violet"/>
+          </LegendURL>
+        </Style>
+        <Style current="1">
+          <Name>gare_cercle_jaune_type_arret_etiquette</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=gare_cercle_jaune_type_arret_etiquette"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>cercle_blanc</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=cercle_blanc"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>gare_cercle_jaune_type_arret</Name>
+          <Title>Gare - type d'arrêt - cercle jaune</Title>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=gare_cercle_jaune_type_arret"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>carre_jaune</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=carre_jaune"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>gare_carre_rouge_type_arret</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=gare_carre_rouge_type_arret"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>gare_pictogramme_noir</Name>
+          <Title>Gare - Pictogramme noir</Title>
+          <Abstract>Gare - Pictogramme noir</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=gare_pictogramme_noir"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>carre_blanc</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=carre_blanc"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>carre_vert</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=carre_vert"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>cercle_rouge</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=cercle_rouge"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>carre_rouge</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=carre_rouge"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>carre_bleu</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=carre_bleu"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>cercle_bleu</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sommet_ferrovaire4TER_gare_avril2012&amp;style=cercle_bleu"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+  </LayerList>
+</ViewContext>

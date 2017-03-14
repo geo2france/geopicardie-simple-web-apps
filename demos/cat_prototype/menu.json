@@ -1,0 +1,235 @@
+{
+  "menu": {
+    "title": "Thèmes par défaut",
+    "description": "Arborescence de thèmes courants",
+    "id": "0",
+    "selected": true,
+    "submenus": [
+      {
+        "title": "Référentiels courants",
+        "description": "Données les plus recherchées ou utilisées",
+        "id": "",
+        "tag": "Référentiels courants",
+        "submenus": [
+          {
+            "title": "Cartes topographiques",
+            "description": "Cartes topographiques type Scan 25 ou OpenStreetMap",
+            "id": "",
+            "tag": "Cartes topographiques"
+          },
+          {
+            "title": "Découpages administratifs",
+            "description": "Limites de communes, d'inter-communalités, des départements, des régions....",
+            "id": "",
+            "tag": "Découpages administratifs"
+          },
+          {
+            "title": "Découpages électoraux",
+            "description": "Limites des cantons, des circonscriptions...",
+            "id": "",
+            "tag": "Découpages électoraux"
+          },
+          {
+            "title": "Données foncières",
+            "description": "Données cadastrales...",
+            "id": "",
+            "tag": "Données foncières",
+            "submenus": []
+          },
+          {
+            "title": "Images aériennes",
+            "description": "Photographies aériennes orthorectifiées ou non, dans le domaine visible ou dans l'infrarouge",
+            "id": "",
+            "tag": "Images aériennes",
+            "submenus": [
+              {
+                "title": "Orthos domaine visible",
+                "description": "Orthophotographies prises dans le domaine visible",
+                "id": "",
+                "tag": "Orthos domaine visible"
+              },
+              {
+                "title": "Orthos domaine infrarouge",
+                "description": "Orthophotographies prises dans le domaine infrarouge",
+                "id": "",
+                "tag": "Orthos domaine infrarouge"
+              },
+              {
+                "title": "Photographies anciennes",
+                "description": "Prises de vue aériennes anciennes",
+                "id": "",
+                "tag": "Photographies anciennes"
+              }
+            ]
+          },
+          {
+            "title": "Occupation du sol",
+            "description": "Données sur l'occupation du sol",
+            "id": "",
+            "tag": "Occupation du sol"
+          },
+          {
+            "title": "Relief",
+            "description": "MNT, LiDAR, ombrage, lignes de rupture de pente, courbes de niveau...",
+            "id": "",
+            "tag": "Relief"
+          },
+          {
+            "title": "Voirie et adresse",
+            "description": "Référentiels de voies et d'adresses",
+            "id": "",
+            "tag": "Voirie et adresse"
+          }
+        ]
+      },
+      {
+        "title": "Aménagement &amp; urbanisme",
+        "description": "",
+        "id": "",
+        "tag": "Aménagement &amp; urbanisme",
+        "submenus": [
+          {
+            "title": "Documents d'urbanisme",
+            "description": "",
+            "id": "",
+            "tag": "Documents d'urbanisme"
+          },
+          {
+            "title": "Données foncières",
+            "description": "",
+            "id": "",
+            "tag": "Données foncières"
+          },
+          {
+            "title": "Occupation du sol",
+            "description": "",
+            "id": "",
+            "tag": "Occupation du sol"
+          },
+          {
+            "title": "Servitudes d'utilité publique",
+            "description": "",
+            "id": "",
+            "tag": "Servitudes d'utilité publique"
+          }
+        ]
+      },
+      {
+        "title": "Culture, société &amp; services",
+        "description": "",
+        "id": "",
+        "tag": "Culture, société &amp; services",
+        "submenus": [
+          {
+            "title": "Activité économique",
+            "description": "",
+            "id": "",
+            "tag": "Activité économique"
+          },
+          {
+            "title": "Éducation &amp; formation",
+            "description": "",
+            "id": "",
+            "tag": "Éducation &amp; formation"
+          },
+          {
+            "title": "Tourisme",
+            "description": "",
+            "id": "",
+            "tag": "Tourisme"
+          }
+        ]
+      },
+      {
+        "title": "Environnement",
+        "description": "",
+        "id": "",
+        "tag": "Environnement",
+        "submenus": [
+          {
+            "title": "Climat, air &amp; énergie",
+            "description": "",
+            "id": "",
+            "tag": "Climat, air &amp; énergie"
+          },
+          {
+            "title": "Eau",
+            "description": "",
+            "id": "",
+            "tag": "Eau",
+            "submenus": [
+              {
+                "title": "Bassins versants",
+                "description": "",
+                "id": "",
+                "tag": "Bassins versants"
+              },
+              {
+                "title": "Réseau hydrographique",
+                "description": "",
+                "id": "",
+                "tag": "Réseau hydrographique"
+              }
+            ]
+          },
+          {
+            "title": "Nature, paysage &amp; biodiversité",
+            "description": "",
+            "id": "",
+            "tag": "Nature, paysage &amp; biodiversité",
+            "submenus": [
+              {
+                "title": "Espaces naturels protégés",
+                "description": "",
+                "id": "",
+                "tag": "Espaces naturels protégés"
+              },
+              {
+                "title": "Inventaires",
+                "description": "",
+                "id": "",
+                "tag": "Inventaires"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Mer &amp; littoral",
+        "description": "",
+        "id": "",
+        "tag": "Mer &amp; littoral"
+      },
+      {
+        "title": "Transport &amp; mobilité",
+        "description": "",
+        "id": "",
+        "tag": "Transport &amp; mobilité",
+        "submenus": [
+          {
+            "title": "Infrastructures de transport",
+            "description": "",
+            "id": "",
+            "tag": "Infrastructures de transport"
+          },
+          {
+            "title": "Réseaux de transport collectif",
+            "description": "",
+            "id": "",
+            "tag": "Réseaux de transport collectif"
+          }
+        ]
+      },
+      {
+        "title": "Risques",
+        "description": "",
+        "id": "",
+        "tag": "Risques"
+      }
+    ]
+  },
+  "options": {
+    "selection": "single",
+    "startingMenuId": "0"
+  }
+}

@@ -1,0 +1,23 @@
+.leaflet-popup-content .title_and_descr {
+	font-size: 12px;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin: 18px 0 0 0;
+	overflow: hidden;
+}
+
+.leaflet-popup-content .title {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.leaflet-popup-content .descr {
+	font-size: 12px;
+	margin: 0.2em 0 0 0;
+}
+
+.leaflet-popup-content .thumbimage {
+	width: 60px; overflow: hidden;
+	margin: 0 0.5em 0.5em 0;
+	float: left;
+}

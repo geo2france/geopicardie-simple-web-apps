@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GéoPicardie - WMS &amp; GeoJSON</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+
+  <!-- Bootstrap styles -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<!-- Leaflet styles -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+	<link rel="stylesheet" href="popup.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+
+	<!-- Bootstrap library -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Leaflet library -->
+	<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+	<script src="leaflet_oms/oms.min.js"></script>
+
+	<!-- JQuery library -->
+	<script src="jquery/jquery.min.js"></script>
+
+	<!-- Custom Leaflet application -->
+	<script type="text/javascript">
+
+		var mapLayersOptions = {
+			layers: [
+				/*{
+					name: 'osm_layer',
+					title: 'Carte OpenStreetMap',
+					baseLayer: true,
+					type: 'WMS',
+					url: 'http://www.geopicardie.fr/geoserver/wms?',
+    			wmsLayers: 'autres:basemaps_google',
+	    		format: 'image/jpeg',
+	    		attribution: 'OpenStreetMap - GéoPicardie',
+	    		addToLayerControl: true
+	    	}, */{
+					name: 'osm_layer',
+					title: 'Carte OpenStreetMap',
+					baseLayer: true,
+					type: 'WMS',
+					url: 'http://geobretagne.fr/wmsouvert?',
+    			wmsLayers: 'imposm-default',
+	    		format: 'image/jpeg',
+	    		attribution: 'OpenStreetMap',
+	    		addToLayerControl: true
+	    	}, {
+	    		name: 'ortho_layer',
+					title: 'Orthophotographies 2001-2002 - GéoPicardie',
+					baseLayer: true,
+					type: 'WMS',
+					url: 'http://www.geopicardie.fr/geoserver/wms?',
+    			wmsLayers: 'reg22:picardie_ortho_2002',
+	    		format: 'image/jpeg',
+	    		attribution: 'OpenStreetMap - GéoPicardie',
+	    		addToLayerControl: true
+	    	}, {
+	    		name: 'marker_layer',
+					title: 'Sites de la Grande Guerre',
+					baseLayer: false,
+					type: 'GeoJSON/Simple URL',
+					url: './data/grande_guerre.js',
+	    		attribution: 'Somme Tourisme',
+	    		addToLayerControl: false,
+	    		markerCluster: {
+	    			on: true,
+	    			distance: 25,
+	    			color: '',
+	    			thickness: 2
+	    		},
+	    		icons: [
+	    			{
+	    				id: 'default',
+	    				filter: '',
+	    				urls: {
+			    			normal: '',
+			    			cluster: '',
+			    			active: '',
+	    				}
+	    			}
+	    		],
+	    		popupContentTemplate: ''
+	    	}
+			]
+		};
+
+		$(document).ready(function() {
+
+			var map = L.map('map').setView([49.8, 2.7], 8);
+			var defaultSubsetName = "Toutes2";
+			var subsetsOfFeatures = {};
+			subsetsOfFeatures[defaultSubsetName] = new Array();
+			var subsetDefaultWidth = 0.002; // in degrees
+			var markerLayer = null;
+
+			scan25_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+    		layers: 'geopicardie:picardie_scan25',
+    		format: 'image/jpeg',
+    		transparent: false,
+    		attribution: "Scan25 - IGN"
+    	});
+
+			ortho_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+    		layers: 'reg22:picardie_ortho_2002',
+    		format: 'image/jpeg',
+    		transparent: true,
+    		attribution: "Orthophotographies 2001-2002 - GéoPicardie"
+    	});
+
+			osm_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+    		layers: 'autres:osm_geopicardie_bright',
+    		format: 'image/png',
+    		transparent: true,
+    		attribution: "OpenStreetMap - GéoPicardie"
+    	});
+
+			var baseMaps = {
+			    "Scan25": scan25_layer,
+			    "OpenStreetMap - GéoPicardie": osm_layer,
+			    "Photographies aériennes": ortho_layer
+			};
+
+			scan25_layer.addTo(map);
+			L.control.layers(baseMaps).addTo(map);
+
+
+  		var lightIcon  = L.Icon.Default.extend({options: {
+  			iconUrl: 'images/marker-icon-red-white-border.png',
+  		  iconSize: [33, 49],
+    		iconAnchor: [16, 45]}});
+  		var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-red-white-border.png',
+  		  iconSize: [33, 49],
+    		iconAnchor: [16, 45]}});
+  		var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-red-white-border.png',
+  		  iconSize: [33, 49],
+    		iconAnchor: [16, 45]}});
+			var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 25});
+
+			$.getJSON('data/grande_guerre.js', function(data) {
+
+				var bounds = new L.LatLngBounds();
+
+    		$.each( data.features, function( i, feature ) {
+					var loc = new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+					bounds.extend(loc);
+
+					subsetsOfFeatures[defaultSubsetName].push(feature);
+  			});
+
+				map.fitBounds(bounds);
+				updateLeftMenu();
+				selectFirstMenuItem();
+			})
+			.fail(function( jqxhr, textStatus, error ) {
+				console.log( textStatus + ', ' + error);
+//				console.log( jqxhr.responseText);
+			})
+
+			function featureSorfFunction(a, b) {
+				var aName = a.properties.name.toLowerCase();
+				var bName = b.properties.name.toLowerCase();
+  			return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+			}
+
+			function updateLeftMenu() {
+				var features = subsetsOfFeatures[defaultSubsetName].sort(featureSorfFunction);
+
+				$.each( features, function( i, feature ) {
+					// Add a menu item for the subset name
+					var menuItemId = "nav-feature-" + feature.properties.id;
+					var htmlCode = '<li><a id="' + menuItemId + '" href="#">' + feature.properties.name + '</a></li>';
+					$("#feature-list").append(htmlCode);
+
+					// Set the function to be called by the click event on the menu item
+					$("#"+menuItemId).on("click", function(e) {
+			      e.preventDefault();
+			      zoomToFeature(feature);
+			    });
+				});
+			}
+
+			function zoomToFeature(feature){
+				// Remove the active class to all the menu items
+				var menuItemId = "nav-feature-" + feature.properties.id;
+				$("#feature-list li").removeClass("active");
+				$("#" + menuItemId).parent().addClass("active");
+
+
+				if( markerLayer !== null) {
+					// Remove the marker / layer
+					map.removeLayer(markerLayer);
+				}
+
+				// Add the marker / layer
+				var featureLoc = new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+				markerLayer = new L.Marker(featureLoc, {icon: new lightIcon()});
+				map.addLayer(markerLayer);
+
+				// Update the description
+				$("#site-name").text(feature.properties.name)
+				$("#site-descr").text(feature.properties.description)
+
+				// Center the map on the feature location
+				var newBounds = new L.LatLngBounds();
+				var nw = new L.LatLng(feature.geometry.coordinates[1] + subsetDefaultWidth, feature.geometry.coordinates[0] - subsetDefaultWidth);
+				var se = new L.LatLng(feature.geometry.coordinates[1] - subsetDefaultWidth, feature.geometry.coordinates[0] + subsetDefaultWidth);
+				newBounds.extend(nw);
+				newBounds.extend(se);
+				map.fitBounds(newBounds);
+			};
+
+			function selectFirstMenuItem(){
+				zoomToFeature(subsetsOfFeatures[defaultSubsetName][3]);
+			};
+
+		});
+
+  </script>
+</head>
+
+<body>
+	<div class="container">
+	  <div class="masthead">
+	    <h3 class="muted">GéoPicardie - Leaflet, flux WMS et GeoJSON</h3>
+      <p class="lead">Quelques exemples d'intégration des flux de données produits par le portail de GéoPicardie.</p>
+	    <div class="navbar">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <ul class="nav">
+	            <li><a href="gastronomie.html">Gastronomie</a></li>
+	            <li><a href="grande_guerre.html">Grande guerre</a></li>
+	            <li><a href="grande_guerre_details.html">Détails grande guerre</a></li>
+	            <li><a class="active" href="missions.html">Missions régionales du CR Picardie</a></li>
+	            <li><a href="amiens.html">Amiens</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div><!-- /.navbar -->
+	  </div>
+
+		<div class="row">
+		  <div class="span4">
+				<div class="well" style="padding: 8px 0;">
+					<ul id="feature-list" class="nav nav-list">
+					  <li class="nav-header">Liste des sites</li>
+					</ul>
+		    </div>
+		  </div>
+		  <div class="span7">
+		    <div class="row">
+		      <div class="span8">
+						<div class="well" style="padding: 10; height: 350px">
+							<div class="well" style="height: 250px; width: 250px; padding:2px; float: right;">
+								<div id="map" style="height: 250px; width: 250px"></div>
+					  	</div>
+		      		<h3 id="site-name">Nom du site</h3>
+							<p id="site-descr">Description du site</p>
+		      	</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+	</div>
+</body>
+</html>

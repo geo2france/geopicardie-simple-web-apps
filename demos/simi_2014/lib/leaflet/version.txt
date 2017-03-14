@@ -1,0 +1,2 @@
+leaflet.js 0.7.3
+http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.3.zip

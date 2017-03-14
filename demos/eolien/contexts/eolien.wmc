@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewContext xmlns="http://www.opengis.net/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.0" id="eolien" xsi:schemaLocation="http://www.opengis.net/context http://schemas.opengis.net/context/1.1.0/context.xsd">
+  <General>
+    <Window width="1613" height="699"/>
+    <BoundingBox minx="431669.939963869983" miny="6843622.66670839954" maxx="924841.380058909999" maxy="7057340.48234780040" SRS="EPSG:2154"/>
+    <Title/>
+    <Extension>
+      <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+    </Extension>
+  </General>
+  <LayerList>
+    <Layer queryable="0" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/autres/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>osm_geopicardie_bright</Name>
+      <Title>Fond OSM GéoPicardie (expérimental)</Title>
+      <FormatList>
+        <Format current="1">image/jpeg</Format>
+      </FormatList>
+      <StyleList>
+        <Style current="1">
+          <Name/>
+          <Title>Default</Title>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">true</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+    <Layer queryable="0" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>autres:basemaps_google</Name>
+      <Title>Fond OSM apparence Google</Title>
+      <FormatList>
+        <Format current="1">image/jpeg</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name/>
+          <Title>Default</Title>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">true</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>picardie_ortho_composite_2008_2009_vis</Name>
+      <Title>Phototographie aérienne composite (2008-2009)</Title>
+      <FormatList>
+        <Format current="1">image/jpeg</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>imagerie_couleurs_normales</Name>
+          <Title>Imagerie - couleurs normales</Title>
+          <Abstract>Styles pour imagerie avec les couleurs par défaut</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=picardie_ortho_composite_2008_2009_vis"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>imagerie_niveaux_gris</Name>
+          <Title>Imagerie - niveaux de gris</Title>
+          <Abstract>Style pour pr?senter des images en niveaux de gris au lieu de la couleur</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=picardie_ortho_composite_2008_2009_vis&amp;style=imagerie_niveaux_gris"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">true</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+    <Layer queryable="0" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>picardie_scan25</Name>
+      <Title>IGN Scan25</Title>
+      <FormatList>
+        <Format current="1">image/jpeg</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>raster</Name>
+          <Title>A boring default style</Title>
+          <Abstract>A sample style for rasters</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=picardie_scan25"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">true</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>mos_picardie</Name>
+      <Title>Occupation du sol GéoPicardie (2010)</Title>
+      <FormatList>
+        <Format current="1">image/jpeg</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>mos_picardie_2010_n4_complet</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=mos_picardie"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>geopicardie:vent40m</Name>
+      <Title>Modélisation de la vitesse du vent à 40 m en Picardie</Title>
+      <MetadataURL>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ns313112.ovh.net/geonetwork/apps/georchestra/?uuid=b748e40a-c5fa-410a-8e65-d5fdacb30e15"/>
+      </MetadataURL>
+      <FormatList>
+        <Format current="1">image/jpeg</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>vent_couleurs_rouge_bleu</Name>
+          <Title>Vitesse du vent - dégradé du rouge au bleu</Title>
+          <Abstract>Vitesse du vent - dégradé du rouge au bleu</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vent40m"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>vent_niveaux_gris_et_transparence</Name>
+          <Title>Vitesse du vent - dégradé de niveaux de gris et de transparence</Title>
+          <Abstract>Vitesse du vent - dégradé de niveaux de gris et de transparence</Abstract>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vent40m&amp;style=vent_niveaux_gris_et_transparence"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://carto.sigpicardie.fr/cgi-bin/mapserv?"/>
+      </Server>
+      <Name>EOLIEN-SchemaRegional-Zonesfavorables</Name>
+      <Title>EOLIEN - Schéma Régional - Zones favorables</Title>
+      <MetadataURL>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sigpicardie.fr/geonetwork/srv/fr/?id=6813"/>
+      </MetadataURL>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="336" height="23" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://carto.sigpicardie.fr/cgi-bin/mapserv?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=EOLIEN-SchemaRegional-Zonesfavorables&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:opacity xmlns:ol="http://openlayers.org/context">0.5</ol:opacity>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://carto.sigpicardie.fr/cgi-bin/mapserv?"/>
+      </Server>
+      <Name>EOLIEN-SchemaRegional-Zonesfavorablessousconditions</Name>
+      <Title>EOLIEN - Schéma Régional - Zones favorables sous conditions</Title>
+      <MetadataURL>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sigpicardie.fr/geonetwork/srv/fr/?id=6814"/>
+      </MetadataURL>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="448" height="23" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://carto.sigpicardie.fr/cgi-bin/mapserv?version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=EOLIEN-SchemaRegional-Zonesfavorablessousconditions&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:opacity xmlns:ol="http://openlayers.org/context">0.5</ol:opacity>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="0">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+      </Server>
+      <Name>autres_wms_only:ign_bdtopo_departements_pic</Name>
+      <Title>Départements de Picardie (BDTopo - polygones)</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>dept_bdtopo_trait_noir_etiquette</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>ligne_blanche</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_blanche"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygone_bord_blanc</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_blanc"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>ligne_grise_epaisse</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_grise_epaisse"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygone_bord_noir_semi_transparent</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_noir_semi_transparent"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygone_bord_orange_transparent</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_orange_transparent"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>polygone_bord_noir</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_noir"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>ligne_noire</Name>
+          <Title/>
+          <LegendURL width="20" height="20" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_noire"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:opacity xmlns:ol="http://openlayers.org/context">0.69</ol:opacity>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDTM_80/eolien_internet.www.map&amp;"/>
+      </Server>
+      <Name>c_N_MAT_EOLIEN_code_8</Name>
+      <Title>éoliennes édifiées</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="128" height="30" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDTM_80/eolien_internet.www.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c_N_MAT_EOLIEN_code_8&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_60/Eolien_usageWMS.www.map&amp;"/>
+      </Server>
+      <Name>c_Eoliennes_Construites</Name>
+      <Title>Éoliennes en fonctionnement</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="178" height="30" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_60/Eolien_usageWMS.www.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c_Eoliennes_Construites&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+    <Layer queryable="1" hidden="1">
+      <Server service="OGC:WMS" version="1.1.1">
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_02/SIG_eolien_DDT02.www.map&amp;"/>
+      </Server>
+      <Name>c_N_MAT_EOLIEN_CONSTRUITS_002</Name>
+      <Title>Mâts construits</Title>
+      <FormatList>
+        <Format current="1">image/png</Format>
+      </FormatList>
+      <StyleList>
+        <Style>
+          <Name>default</Name>
+          <Title>default</Title>
+          <LegendURL width="116" height="30" format="image/png">
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://mapserveur.application.developpement-durable.gouv.fr/map/mapserv?map=/opt/data/carto/cartelie/prod/DDT_02/SIG_eolien_DDT02.www.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=c_N_MAT_EOLIEN_CONSTRUITS_002&amp;format=image/png&amp;STYLE=default"/>
+          </LegendURL>
+        </Style>
+      </StyleList>
+      <Extension>
+        <ol:maxExtent xmlns:ol="http://openlayers.org/context" minx="-357823.000000000000" miny="6037008.00000000000" maxx="1313632.00000000000" maxy="7230727.00000000000"/>
+        <ol:tileSize xmlns:ol="http://openlayers.org/context" width="512" height="512"/>
+        <ol:transparent xmlns:ol="http://openlayers.org/context">true</ol:transparent>
+        <ol:numZoomLevels xmlns:ol="http://openlayers.org/context">16</ol:numZoomLevels>
+        <ol:units xmlns:ol="http://openlayers.org/context">m</ol:units>
+        <ol:isBaseLayer xmlns:ol="http://openlayers.org/context">false</ol:isBaseLayer>
+        <ol:displayInLayerSwitcher xmlns:ol="http://openlayers.org/context">true</ol:displayInLayerSwitcher>
+        <ol:singleTile xmlns:ol="http://openlayers.org/context">false</ol:singleTile>
+        <ol:transitionEffect xmlns:ol="http://openlayers.org/context"/>
+        <ol:gutter xmlns:ol="http://openlayers.org/context">10</ol:gutter>
+      </Extension>
+    </Layer>
+  </LayerList>
+</ViewContext>
