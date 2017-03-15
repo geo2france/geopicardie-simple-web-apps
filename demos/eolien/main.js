@@ -9,40 +9,40 @@ $(document).ready(function() {
 		function(show) {
 			if(show) {
 				// Display the loading indicator
-		    $('#loading-indicator').show();
+			$('#loading-indicator').show();
 			} else {
 				// Hide the loading indicator
-		    $('#loading-indicator').hide();
+			$('#loading-indicator').hide();
 			}
 		},
 		geonames_options)];
 
-  // Increase reload attempts 
-  OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
-  
+	// Increase reload attempts 
+	OpenLayers.IMAGE_RELOAD_ATTEMPTS = 2;
+
 	var map;
 
-  init_map();
+	init_map();
 
-  // Listener to the radio buttons used to change the base layer
-  $("#basemap_layer_selector input[type=radio]").change(function(){
-    var selected_layer;
-  	if(this.value !== "") {
-    	selected_layer = map.getLayersByName(this.value)[0];
-  	}
+	// Listener to the radio buttons used to change the base layer
+	$("#basemap_layer_selector input[type=radio]").change(function(){
+		var selected_layer;
+		if(this.value !== "") {
+			selected_layer = map.getLayersByName(this.value)[0];
+		}
 
-  	for (var i = 5; i >= 0; i--) {
-  		map.layers[i].setVisibility(false);
-  	};
+		for (var i = 5; i >= 0; i--) {
+			map.layers[i].setVisibility(false);
+		};
 
-    if(undefined !== selected_layer) {
-    	selected_layer.setVisibility(true);
-    }
+		if(undefined !== selected_layer) {
+			selected_layer.setVisibility(true);
+		}
 	});
 
-  // Listener to the checkboxes used to change the overlay layers visibility
-  $("#overlay_selectors input[type=checkbox]").change(function(){
-    var selected_layers = [];
+	// Listener to the checkboxes used to change the overlay layers visibility
+	$("#overlay_selectors input[type=checkbox]").change(function(){
+    	var selected_layers = [];
 
 		switch(this.value) { 
 			case "vent":
@@ -64,26 +64,26 @@ $(document).ready(function() {
 				break;
 		}
 
-  	for (var i = selected_layers.length - 1; i >= 0; i--) {
-  		selected_layers[i].setVisibility(this.checked);
-  	};
+		for (var i = selected_layers.length - 1; i >= 0; i--) {
+			selected_layers[i].setVisibility(this.checked);
+		};
 
 	});
   
   function init_map() {
 
-    var format = new OpenLayers.Format.WMC({'layerOptions': {buffer: 0}});
+	var format = new OpenLayers.Format.WMC({'layerOptions': {buffer: 0}});
 
-    // Load of a web map context
-    context_file = 'contexts/eolien.wmc'
-    $.get( context_file, function( data ) {
+	// Load of a web map context
+	context_file = 'contexts/eolien.wmc'
+	$.get( context_file, function( data ) {
 
-    	// Map initialisation with a web map context
-      var jsonFormat = new OpenLayers.Format.JSON();
-      var mapOptions = jsonFormat.read('{"div": "map", "allOverlays": true}');
-      map = format.read(data, {map: mapOptions});
-//      map.addControl(new OpenLayers.Control.LayerSwitcher());
-			map.zoomTo(4);
+		// Map initialisation with a web map context
+		var jsonFormat = new OpenLayers.Format.JSON();
+		var mapOptions = jsonFormat.read('{"div": "map", "allOverlays": true}');
+		map = format.read(data, {map: mapOptions});
+	//  map.addControl(new OpenLayers.Control.LayerSwitcher());
+		map.zoomTo(4);
 
      });
 
