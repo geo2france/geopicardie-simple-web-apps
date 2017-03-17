@@ -50,18 +50,13 @@ $(document).ready(function() {
 				break;
 
 			case "mats":
-				selected_layers.push.apply(selected_layers, map.getLayersByName("éoliennes édifiées"));
-				selected_layers.push.apply(selected_layers, map.getLayersByName("Éoliennes en fonctionnement"));
-				selected_layers.push.apply(selected_layers, map.getLayersByName("Mâts construits"));
+				selected_layers.push.apply(selected_layers, map.getLayersByName("Mâts éoliens"));
+				break;
+			
+			case "zfe":
+				selected_layers.push.apply(selected_layers, map.getLayersByName("ZFE"));
 				break;
 
-			case "zones_fav":
-				selected_layers.push.apply(selected_layers, map.getLayersByName("EOLIEN - Schéma Régional - Zones favorables"));
-				break;
-
-			case "zones_fav_sous_conditions":
-				selected_layers.push.apply(selected_layers, map.getLayersByName("EOLIEN - Schéma Régional - Zones favorables sous conditions"));
-				break;
 		}
 
 		for (var i = selected_layers.length - 1; i >= 0; i--) {
