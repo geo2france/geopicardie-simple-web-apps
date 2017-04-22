@@ -8,8 +8,8 @@
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
 
-	  <!-- Bootstrap styles -->
-	  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+		<!-- Bootstrap styles -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
 
 		<!-- Leaflet styles -->
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
@@ -17,7 +17,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
 
 		<!-- Bootstrap library -->
-	  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- Leaflet library -->
 		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
@@ -29,94 +29,25 @@
 		<!-- Custom Leaflet application -->
 		<script type="text/javascript">
 
-			var mapLayersOptions = {
-				layers: [
-					{
-						name: 'osm_layer',
-						title: 'Carte OpenStreetMap',
-						baseLayer: true,
-						type: 'WMS',
-						url: 'http://www.geopicardie.fr/geoserver/wms?',
-	    			wmsLayers: 'autres:basemaps_google',
-		    		format: 'image/jpeg',
-		    		attribution: 'OpenStreetMap - GéoPicardie',
-		    		addToLayerControl: true
-		    	}, /*{
-						name: 'osm_layer',
-						title: 'Carte OpenStreetMap',
-						baseLayer: true,
-						type: 'WMS',
-						url: 'http://geobretagne.fr/wmsouvert?',
-	    			wmsLayers: 'imposm-default',
-		    		format: 'image/jpeg',
-		    		attribution: 'OpenStreetMap',
-		    		addToLayerControl: true
-		    	},*/ {
-		    		name: 'ortho_layer',
-						title: 'Orthophotographies 2008-2009 - GéoPicardie',
-						baseLayer: true,
-						type: 'WMS',
-						url: 'http://www.geopicardie.fr/geoserver/wms?',
-	    			wmsLayers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
-		    		format: 'image/jpeg',
-		    		attribution: 'GéoPicardie',
-		    		addToLayerControl: true
-		    	}, {
-		    		name: 'marker_layer',
-						title: 'Sites de la Grande Guerre',
-						baseLayer: false,
-						type: 'GeoJSON/Simple URL',
-						url: './data/grande_guerre.js',
-		    		attribution: 'Somme Tourisme',
-		    		addToLayerControl: false,
-		    		markerCluster: {
-		    			on: true,
-		    			distance: 25,
-		    			color: '',
-		    			thickness: 2
-		    		},
-		    		icons: [
-		    			{
-		    				id: 'default',
-		    				filter: '',
-		    				urls: {
-				    			normal: '',
-				    			cluster: '',
-				    			active: '',
-		    				}
-		    			}
-		    		],
-		    		popupContentTemplate: ''
-		    	}
-				]
-			};
-
 			$(document).ready(function() {
 
 				var map = L.map('map').setView([49.8, 2.7], 8);
 				var subsetsOfFeatures = {"Toutes": []};
 				var subsetDefaultWidth = 0.1; // in degrees
 
-				osm_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
-	    		layers: 'autres:osm_geopicardie_bright',
-	    		format: 'image/png',
-	    		transparent: true,
-	    		attribution: "OpenStreetMap - GéoPicardie"
-	    	});
-
-	/*			osm_layer = L.tileLayer.wms("http://geobretagne.fr/wmsouvert?", {
-	    		layers: 'imposm-bing',
-	    		format: 'image/png',
-	    		transparent: true,
-	    		attribution: "OpenStreetMap"
-	    	});*/
+				osm_layer = L.tileLayer.wms("http://osm.geopicardie.fr/mapproxy/service?", {
+					layers: 'bright',
+					format: 'image/png',
+					transparent: true,
+					attribution: "OpenStreetMap - GéoPicardie"
+				});
 
 				ortho_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
-	    		layers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
-	    		format: 'image/jpeg',
-	    		transparent: true,
-	    		attribution: "Orthophotographies 2008-2009 - GéoPicardie"
-	    	});
+					layers: 'picardie_ortho_ign_2013_vis',
+					format: 'image/png',
+					transparent: true,
+					attribution: "Orthophotographies 2008-2009 - GéoPicardie"
+				});
 
 				var baseMaps = {
 				    "Carte OpenStreetMap": osm_layer,
@@ -126,34 +57,13 @@
 				osm_layer.addTo(map);
 				L.control.layers(baseMaps).addTo(map);
 
+				var lightIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-bright.png'}});
+				var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon.png'}});
+				var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-dark.png'}});
 
-	  		var lightIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-bright.png'}});
-	  		var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon.png'}});
-	  		var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-dark.png'}});
-	/*  		var lightIcon  = L.Icon.Default.extend({options: {
-	  			iconUrl: 'images/casque_40_clair.png',
-	  		  iconSize: [40, 29],
-	    		iconAnchor: [20, 20],
-	    		shadowUrl: 'images/casque_40_ombre.png',
-	    		shadowSize: [40, 20],
-	    		shadowAnchor: [14, 10]}});
-	  		var normalIcon  = L.Icon.Default.extend({options: {
-	  			iconUrl: 'images/casque_40.png',
-	  		  iconSize: [40, 29],
-	    		iconAnchor: [20, 20],
-	    		shadowUrl: 'images/casque_40_ombre.png',
-	    		shadowSize: [40, 20],
-	    		shadowAnchor: [10, 10]}});
-	  		var darkIcon  = L.Icon.Default.extend({options: {
-	  			iconUrl: 'images/casque_40_sombre.png',
-	  		  iconSize: [40, 29],
-	    		iconAnchor: [20, 20],
-	    		shadowUrl: 'images/casque_40_ombre.png',
-	    		shadowSize: [40, 20],
-	    		shadowAnchor: [10, 10]}});*/
 				var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 25});
 
-				$.getJSON('data/grande_guerre.js', function(data) {
+				$.getJSON('./data.js', function(data) {
 
 					var bounds = new L.LatLngBounds();
 
