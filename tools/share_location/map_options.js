@@ -7,23 +7,16 @@ var map_options = {
           attribution: "Scan25 - IGN"
         }),
     "OpenStreetMap - GéoPicardie": new L.tileLayer.wms(
-        "http://www.geopicardie.fr/geoserver/wms?", {
-          layers: 'autres:osm_geopicardie_bright',
+        "http://osm.geopicardie.fr/mapproxy/service?", {
+          layers: 'bright',
           format: 'image/jpeg',
           attribution: "OpenStreetMap - GéoPicardie"
         }),
     "Images aériennes - GéoPicardie": new L.tileLayer.wms(
         "http://www.geopicardie.fr/geoserver/wms?", {
-          layers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
+          layers: 'picardie_ortho_ign_2013_vis',
           format: 'image/jpeg',
           attribution: "GéoPicardie"
-        }),
-    "Mapquest": new L.TileLayer(
-        'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-          maxZoom: 18,
-          attribution: '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
-          subdomains: ['otile1','otile2','otile3','otile4'],
-          format: 'image/jpeg'
         }),
     "Stamen - Toner": new L.tileLayer(
       "http://{s}tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -46,6 +39,5 @@ var base_map_layer_ids = {
   "Scan25 IGN": "scan25",
   "OpenStreetMap - GéoPicardie": "geopicosm",
   "Images aériennes - GéoPicardie": "geopicortho",
-  "Mapquest": "mapquest",
   "Stamen - Toner": "stamentoner"
 };
