@@ -328,7 +328,7 @@
           <Name>default</Name>
           <Title>default</Title>
           <LegendURL width="336" height="23" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map&version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=layer26&amp;format=image/png&amp;STYLE=default"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map&amp;version=1.1.1&amp;service=WMS&amp;request=GetLegendGraphic&amp;layer=layer26&amp;format=image/png&amp;STYLE=default"/>
           </LegendURL>
         </Style>
       </StyleList>

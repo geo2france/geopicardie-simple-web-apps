@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).on('load', function() {
 
 /*function init() {*/
 
@@ -26,18 +26,8 @@ $(document).ready(function() {
 
 	// Listener to the radio buttons used to change the base layer
 	$("#basemap_layer_selector input[type=radio]").change(function(){
-		var selected_layer;
-		if(this.value !== "") {
-			selected_layer = map.getLayersByName(this.value)[0];
-		}
-
-		for (var i = 5; i >= 0; i--) {
-			map.layers[i].setVisibility(false);
-		};
-
-		if(undefined !== selected_layer) {
-			selected_layer.setVisibility(true);
-		}
+	    selectedBackgroundLayer = this.value;
+	    selectBackgroundLayer(selectedBackgroundLayer);
 	});
 
 	// Listener to the checkboxes used to change the overlay layers visibility
@@ -56,7 +46,6 @@ $(document).ready(function() {
 			case "zfe":
 				selected_layers.push.apply(selected_layers, map.getLayersByName("ZFE"));
 				break;
-
 		}
 
 		for (var i = selected_layers.length - 1; i >= 0; i--) {
@@ -64,41 +53,46 @@ $(document).ready(function() {
 		};
 
 	});
-  
-  function init_map() {
 
-	var format = new OpenLayers.Format.WMC({'layerOptions': {buffer: 0}});
+    function init_map() {
 
-	// Load of a web map context
-	context_file = 'contexts/eolien.wmc'
-	$.get( context_file, function( data ) {
+        var format = new OpenLayers.Format.WMC({'layerOptions': {buffer: 0}});
 
-		// Map initialisation with a web map context
-		var jsonFormat = new OpenLayers.Format.JSON();
-		var mapOptions = jsonFormat.read('{"div": "map", "allOverlays": true}');
-		map = format.read(data, {map: mapOptions});
-	//  map.addControl(new OpenLayers.Control.LayerSwitcher());
-		map.zoomTo(4);
+        $.ajaxSetup({
+            error: function(xhr, status, error) {
+                console.log("An AJAX error occured: " + status + "\nError: " + error);
+            }
+        });
 
-     });
+        // Load of a web map context
+        context_file = './contexts/eolien.wmc'
+        $.get( context_file, function( data ) {
 
+            // Map initialisation with a web map context
+            var jsonFormat = new OpenLayers.Format.JSON();
+            var mapOptions = jsonFormat.read('{"div": "map", "allOverlays": true}');
+            map = format.read(data, {map: mapOptions});
+        //  map.addControl(new OpenLayers.Control.LayerSwitcher());
+            map.zoomTo(4);
 
-  };
+            selectBackgroundLayer("Fond OSM GéoPicardie");
 
-	$( "#zoom_5k" ).click(function() {
+        })
+    };
+
+    $( "#zoom_5k" ).click(function() {
 		map.zoomTo(14);
-    return false;
+        return false;
 	});
 
 	$( "#zoom_25k" ).click(function() {
 		map.zoomTo(11);
-    return false;
+        return false;
 	});
 
 	$( "#zoom_100k" ).click(function() {
 		map.zoomTo(8);
-    return false;
-
+        return false;
 	});
 
 	// Listener for the place nav list items
@@ -130,7 +124,7 @@ $(document).ready(function() {
 		$("#search-result-list").empty();
 
 		// Display the loading indicator
-    showLoadingIndicator(true);
+        showLoadingIndicator(true);
 
 		// Get the input string
 		input_string = $("#place_name_input").val();
@@ -139,44 +133,59 @@ $(document).ready(function() {
 		search_engines[current_search_engine_index].processNewSearch(input_string, function() {
 			var found_places = search_engines[current_search_engine_index].found_places;
 
-	    // Update the content of the result list
-			// Any result?
-	    if (found_places.length > 0) {
-				// Loop through the results set
-				for (var i = 0; i < found_places.length; i++) {
-					place = found_places[i]
-					
-					place_string = '<strong>' + place.name + '</strong>';
-					place_string += ' <em> (' + place.description + ')</em>';
+            // Update the content of the result list
+            // Any result?
+            if (found_places.length > 0) {
+                // Loop through the results set
+                for (var i = 0; i < found_places.length; i++) {
+                    place = found_places[i]
 
-					$("#search-result-list").append('<a href="#" class="list-group-item">' +
-							'<small>' + place_string + '</small>' +
-						'</a>');
-				}
-				
-				// Hide the loading indicator
-				$('#loading-indicator').hide();
-				return true;
+                    place_string = '<strong>' + place.name + '</strong>';
+                    place_string += ' <em> (' + place.description + ')</em>';
 
-			} else {
-				// Hide the loading indicator
-				$('#loading-indicator').hide();
-				$("#search-result-list").append('Aucun résultat n\'a été trouvé');
-				return false;
-			}
+                    $("#search-result-list").append('<a href="#" class="list-group-item">' +
+                            '<small>' + place_string + '</small>' +
+                        '</a>');
+                }
+
+                // Hide the loading indicator
+                $('#loading-indicator').hide();
+                return true;
+
+            } else {
+                // Hide the loading indicator
+                $('#loading-indicator').hide();
+                $("#search-result-list").append('Aucun résultat n\'a été trouvé');
+                return false;
+            }
 		});
 
 		// To avoid the page to be reloading on the submit event
 		return false;
 	});
 
+    function selectBackgroundLayer(layerName) {
+		var selected_layer;
+		if(layerName !== "") {
+			selected_layer = map.getLayersByName(layerName)[0];
+		}
+
+		for (var i = 5; i >= 0; i--) {
+			map.layers[i].setVisibility(false);
+		};
+
+		if(undefined !== selected_layer) {
+			selected_layer.setVisibility(true);
+		}
+    }
+
 	function showLoadingIndicator(show) {
 		if(show) {
 			// Display the loading indicator
-	    $('#loading-indicator').show();
+	        $('#loading-indicator').show();
 		} else {
 			// Hide the loading indicator
-	    $('#loading-indicator').hide();
+	        $('#loading-indicator').hide();
 		}
 	};
 
