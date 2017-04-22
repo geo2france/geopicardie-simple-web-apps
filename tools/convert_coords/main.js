@@ -7,26 +7,17 @@ $(document).ready(function() {
   });
 
   var ortho_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
-    layers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
-    format: 'image/jpeg',
-    attribution: "GéoPicardie"
+              layers: 'picardie_ortho_ign_2013_vis',
+              format: 'image/jpeg',
+              attribution: "GéoPicardie"
   });
 
-  var osm_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
-    layers: 'autres:osm_geopicardie_bright',
+  var osm_layer = L.tileLayer.wms("http://osm.geopicardie.fr/mapproxy/service?", {
+    layers: 'bright',
     format: 'image/jpeg',
     attribution: "OpenStreetMap - GéoPicardie"
   });
 
-  var mapquest_layer = new L.TileLayer(
-    'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
-      subdomains: ['otile1','otile2','otile3','otile4'],
-      format: 'image/jpeg'
-    }
-  );
- 
   var stamen_toner_layer = new L.tileLayer(
     "http://{s}tile.stamen.com/toner/{z}/{x}/{y}.png", {
       subdomains: ['','a.','b.','c.','d.'],
@@ -38,7 +29,6 @@ $(document).ready(function() {
       "Scan25 IGN": scan25_layer,
       "OpenStreetMap - GéoPicardie": osm_layer,
       "Images aériennes - GéoPicardie": ortho_layer,
-      "Mapquest": mapquest_layer,
       "Stamen - Toner": stamen_toner_layer
   };
 
@@ -67,38 +57,10 @@ $(document).ready(function() {
   // with the coords of the map marker
   updateCoordsFromMapMarker();
 
-  // Listeners for the map toolbar
-  $( "#recenter_map" ).click(function() {
-    map.setView(marker.getLatLng(), map.getZoom());
-    updateCoordsFromMapMarker();
-  });
-
-  $( "#move_marker" ).click(function() {
-    marker.setLatLng(map.getCenter());
-    updateCoordsFromMapMarker();
-  });
-
-  $( "#zoom_region" ).click(function() {
-    map.setZoom(8);
-    updateCoordsFromMapMarker();
-  });
-
-  $( "#zoom_town" ).click(function() {
-    map.setZoom(12);
-    updateCoordsFromMapMarker();
-  });
-
-  $( "#zoom_street" ).click(function() {
-    map.setZoom(16);
-    updateCoordsFromMapMarker();
-  });
 
   // Listeners for the srs dropdown lists
   $( "#input_srs" ).change(function() {
     var input_srs = my_srs.srs_dict[$("#input_srs").val()]
-/*    var input_srs_def = input_srs.def;
-    var srs_type = input_srs.type;
-*/
     $("#input_group_x > span.input-group-addon").text(input_srs.x_label);
     $("#input_group_y > span.input-group-addon").text(input_srs.y_label);
 
@@ -107,9 +69,6 @@ $(document).ready(function() {
 
   $( "#output_srs" ).change(function() {
     var output_srs = my_srs.srs_dict[$("#output_srs").val()]
-/*    var output_srs_def = output_srs.def;
-    var srs_type = output_srs.type;
-*/
     $("#output_group_x > span.input-group-addon").text(output_srs.x_label);
     $("#output_group_y > span.input-group-addon").text(output_srs.y_label);
 
