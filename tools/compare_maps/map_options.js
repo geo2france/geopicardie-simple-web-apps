@@ -6,18 +6,23 @@ var map_options_left = {
                 format: 'image/jpeg',
                 attribution: "Scan25 - IGN"
             }),
-        "OpenStreetMap - GéoPicardie": new L.tileLayer.wms(
-            "http://www.geopicardie.fr/geoserver/wms?", {
-                layers: 'autres:osm_geopicardie_bright',
-                format: 'image/jpeg',
-                attribution: "OpenStreetMap - GéoPicardie"
+        "OpenStreetMap contrasté - GéoPicardie": new L.tileLayer.wms(
+            "http://osm.geopicardie.fr/mapproxy/service?", {
+              layers: 'bright',
+              format: 'image/jpeg',
+              attribution: "OpenStreetMap - GéoPicardie"
             }),
-        "Open Mapquest": new L.TileLayer(
-            'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-                maxZoom: 18,
-                attribution: '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
-                subdomains: ['otile1','otile2','otile3','otile4'],
-                format: 'image/jpeg'
+        "OpenStreetMap gris - GéoPicardie": new L.tileLayer.wms(
+            "http://osm.geopicardie.fr/mapproxy/service?", {
+              layers: 'grey',
+              format: 'image/jpeg',
+              attribution: "OpenStreetMap - GéoPicardie"
+            }),
+        "OpenStreetMap naturaliste - GéoPicardie": new L.tileLayer.wms(
+            "http://osm.geopicardie.fr/mapproxy/service?", {
+              layers: 'naturaliste',
+              format: 'image/jpeg',
+              attribution: "OpenStreetMap - GéoPicardie"
             }),
         "Images aériennes 2002 - GéoPicardie": new L.tileLayer.wms(
             "http://www.geopicardie.fr/geoserver/wms?", {
@@ -30,6 +35,12 @@ var map_options_left = {
                 layers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
                 format: 'image/jpeg',
                 attribution: "GéoPicardie"
+            }),
+        "Images aériennes 2013 - GéoPicardie": new L.tileLayer.wms(
+            "http://www.geopicardie.fr/geoserver/wms?", {
+              layers: 'picardie_ortho_ign_2013_vis',
+              format: 'image/jpeg',
+              attribution: "GéoPicardie"
             }),
         "Occupation du sol 1992 - GéoPicardie": new L.tileLayer.wms(
             "http://www.geopicardie.fr/geoserver/wms?", {
@@ -67,18 +78,23 @@ var map_options_right = {
                 format: 'image/jpeg',
                 attribution: "Scan25 - IGN"
             }),
-        "OpenStreetMap - GéoPicardie": new L.tileLayer.wms(
-            "http://www.geopicardie.fr/geoserver/wms?", {
-                layers: 'autres:osm_geopicardie_bright',
-                format: 'image/jpeg',
-                attribution: "OpenStreetMap - GéoPicardie"
+        "OpenStreetMap contrasté - GéoPicardie": new L.tileLayer.wms(
+            "http://osm.geopicardie.fr/mapproxy/service?", {
+              layers: 'bright',
+              format: 'image/jpeg',
+              attribution: "OpenStreetMap - GéoPicardie"
             }),
-        "Open Mapquest": new L.TileLayer(
-            'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-                maxZoom: 18,
-                attribution: '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
-                subdomains: ['otile1','otile2','otile3','otile4'],
-                format: 'image/jpeg'
+        "OpenStreetMap gris - GéoPicardie": new L.tileLayer.wms(
+            "http://osm.geopicardie.fr/mapproxy/service?", {
+              layers: 'grey',
+              format: 'image/jpeg',
+              attribution: "OpenStreetMap - GéoPicardie"
+            }),
+        "OpenStreetMap naturaliste - GéoPicardie": new L.tileLayer.wms(
+            "http://osm.geopicardie.fr/mapproxy/service?", {
+              layers: 'naturaliste',
+              format: 'image/jpeg',
+              attribution: "OpenStreetMap - GéoPicardie"
             }),
         "Images aériennes 2002 - GéoPicardie": new L.tileLayer.wms(
             "http://www.geopicardie.fr/geoserver/wms?", {
@@ -91,6 +107,12 @@ var map_options_right = {
                 layers: 'geopicardie:picardie_ortho_composite_2008_2009_vis',
                 format: 'image/jpeg',
                 attribution: "GéoPicardie"
+            }),
+        "Images aériennes 2013 - GéoPicardie": new L.tileLayer.wms(
+            "http://www.geopicardie.fr/geoserver/wms?", {
+              layers: 'picardie_ortho_ign_2013_vis',
+              format: 'image/jpeg',
+              attribution: "GéoPicardie"
             }),
         "Occupation du sol 1992 - GéoPicardie": new L.tileLayer.wms(
             "http://www.geopicardie.fr/geoserver/wms?", {
