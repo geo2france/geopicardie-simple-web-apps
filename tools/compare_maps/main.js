@@ -22,5 +22,5 @@ $(document).ready(function() {
         map.addControl(new L.control.layers(base_layers));
 
         return map;
-  }
+    }
 });
