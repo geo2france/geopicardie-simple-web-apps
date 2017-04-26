@@ -1,168 +1,186 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>GéoPicardie - Localisation et partage d'un lieu</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>GéoPicardie - Localisation et partage d'un lieu</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico"
+          type="image/vnd.microsoft.icon"/>
 
-        <!-- Bootstrap styles -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
 
-        <!-- Leaflet styles -->
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <!-- Leaflet styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+          integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+          crossorigin=""/>
 
-        <!-- Leaflet context menu styles -->
-        <link rel="stylesheet" href="../lib/leaflet.contextmenu/leaflet.contextmenu.css"/>
+    <!-- Leaflet context menu styles -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.min.css"/>
 
-        <!-- Custom styles -->
-        <link rel="stylesheet" href="index.css" />
-        <link rel="stylesheet" href="../bootstrap_narrow_page.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="../bootstrap_narrow_page.css"/>
 
-    </head>
+</head>
 
-    <body>
-    <div id="wrap">
-            <div class="container">
+<body>
+<div id="wrap">
+    <div class="container">
 
-                <div class="page-header">
-                    <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
-                    <small class="pull-right">Localisation et partage d'un lieu</small></h1>
+        <div class="page-header">
+            <h1><a href="http://www.geopicardie.fr"><img
+                    src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie"/></a>
+                <small class="pull-right">Localisation et partage d'un lieu</small>
+            </h1>
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+            <li><a href="..">Boîte à outils</a></li>
+            <li class="active">Localisation et partage d'un lieu</li>
+        </ol>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="well" style="padding: 0;">
+                    <div id="map" style="height: 400px"></div>
                 </div>
+            </div>
 
-                <ol class="breadcrumb">
-                    <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
-                    <li><a href="..">Boîte à outils</a></li>
-                    <li class="active">Localisation et partage d'un lieu</li>
-                </ol>
-
-
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="well" style="padding: 0;">
-                            <div id="map" style="height: 400px"></div>
+            <div class="col-md-6">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseSearch">Recherche d'un lieu
+                                </a>
+                            </h4>
                         </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="panel-group" id="accordion">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSearch">Recherche d'un lieu
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseSearch" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <form role="search">
-                                            <div class="input-group">
-                                                <input id="place_name_input" type="text" class="form-control">
-                                                <span class="input-group-btn">
+                        <div id="collapseSearch" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <form role="search">
+                                    <div class="input-group">
+                                        <input id="place_name_input" type="text" class="form-control">
+                                        <span class="input-group-btn">
                                                     <button id="search_button" class="btn btn-default" type="submit">Rechercher</button>
                                                 </span>
-                                            </div>
-                                            <img src="./images/loading.gif" id="loading-indicator" style="display:none" />
-                                        </form>
-										<p>&nbsp;</p>
-                                        <div class="list-group" id="search-result-list">
-                                        </div>
                                     </div>
+                                    <img src="./images/loading.gif" id="loading-indicator" style="display:none"/>
+                                </form>
+                                <p>&nbsp;</p>
+                                <div class="list-group" id="search-result-list">
                                 </div>
                             </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseZoom">Outils de zoom
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseZoom" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="container">
-                                            <div class="col-md-4">
-                                                <p>Échelle&nbsp;:</p>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <a id="zoom_5k" href="#">rue <span class="pull-right">(5.000<small> e</small>)</span></a><br/>
-                                                <a id="zoom_25k" href="#">bourg <span class="pull-right">(25.000<small> e</small>)</span></a><br/>
-                                                <a id="zoom_100k" href="#">agglomération <span class="pull-right">(100.000<small> e</small>)</span></a><br/>
-                                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseZoom">Outils de zoom
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseZoom" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-4">Échelle&nbsp:</div>
+                                        <div class="col-md-8">
+                                            <a id="zoom_5k" href="#">rue <span class="pull-right">(5.000<small> e</small>)</span></a><br/>
+                                            <a id="zoom_25k" href="#">bourg <span class="pull-right">(25.000<small> e</small>)</span></a><br/>
+                                            <a id="zoom_100k" href="#">agglomération <span class="pull-right">(100.000<small> e</small>)</span></a><br/>
                                         </div>
+                                    </div>
 
+                                    <div class="row">
                                         <div class="col-md-12">
                                             <hr/>
                                         </div>
-
-                                        <div class="container">
-                                            <div class="col-md-4">
-                                                <p>Localisation&nbsp;:</p>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <a id="recenter_map_marker" href="#">sur la punaise</a><br/>
-                                                <a id="recenter_map_amiens" href="#">sur Amiens</a><br/>
-                                                <a id="recenter_map_beauvais" href="#">sur Beauvais</a><br/>
-                                                <a id="recenter_map_laon" href="#">sur Laon</a><br/>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseMarker">Position de la punaise
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseMarker" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="container">
-                                            <div class="col-md-6">
-                                                <p>Déplacer la punaise&nbsp;:</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <a id="move_marker" href="#">au centre de la carte</a>
-                                            </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">Localisation&nbsp;:</div>
+                                        <div class="col-md-8">
+                                            <a id="recenter_map_marker" href="#">sur la punaise</a><br/>
+                                            <a id="recenter_map_amiens" href="#">sur Amiens</a><br/>
+                                            <a id="recenter_map_beauvais" href="#">sur Beauvais</a><br/>
+                                            <a id="recenter_map_laon" href="#">sur Laon</a><br/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseMarker">Position de la punaise
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseMarker" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">Déplacer la punaise&nbsp&nbsp;:</div>
+                                        <div class="col-md-6">
+                                            <a id="move_marker" href="#">au centre de la carte</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <div id="footer">
-            <div class="container">
-                <p>Outil réalisé à l'aide de <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, <a href="http://www.geonames.org/" target="_blank">geonames.org</a>.</p>
-            </div>
-        </div>
+    </div>
+</div>
 
-        <!-- Leaflet library -->
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<div id="footer">
+    <div class="container">
+        <p>Outil réalisé à l'aide de <a href="http://leafletjs.com/" target="_blank">Leaflet</a>,
+            <a href="http://www.geonames.org/" target="_blank">geonames.org</a>.
+            Code source&nbsp;: <a href="https://github.com/geopicardie/geopicardie-simple-web-apps" target="_blank">github.com/geopicardie</a>.
+        </p>
+    </div>
+</div>
 
-        <!-- Leaflet context menu library -->
-        <script src="../lib/leaflet.contextmenu/leaflet.contextmenu.js"></script>
+<!-- Leaflet library -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+        integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+        crossorigin=""></script>
 
-        <!-- JQuery library -->
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<!-- Leaflet context menu library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.min.js"></script>
 
-        <!-- Bootstrap library -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- JQuery library -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-        <!-- Custom javascript -->
-        <script type="text/javascript" src="main.js"></script>
-        <script type="text/javascript" src="./geopic.searchengine/geopic.searchengine.js"></script>
-        <script type="text/javascript" src="./geopic.searchengine/geopic.searchengine_geonames.js"></script>
-        <script type="text/javascript" src="map_options.js"></script>
-        <script type="text/javascript" src="search_engine_options.js"></script>
+<!-- Bootstrap library -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
-    </body>
+<!-- Custom javascript -->
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="./geopic.searchengine/geopic.searchengine.js"></script>
+<script type="text/javascript" src="./geopic.searchengine/geopic.searchengine_geonames.js"></script>
+<script type="text/javascript" src="map_options.js"></script>
+<script type="text/javascript" src="search_engine_options.js"></script>
+
+</body>
 </html>

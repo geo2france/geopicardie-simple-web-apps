@@ -1,89 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>GéoPicardie - Comparaison de cartes avec glissière</title>
-        <meta charset="utf-8" />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
+<head>
+    <title>GéoPicardie - Comparaison de cartes avec glissière</title>
+    <meta charset="utf-8"/>
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui'/>
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico"
+          type="image/vnd.microsoft.icon"/>
 
-        <!-- Bootstrap styles -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
 
-        <!-- Leaflet styles -->
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <!-- Leaflet styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+          integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+          crossorigin=""/>
 
-        <!-- Custom styles -->
-        <link rel="stylesheet" href="../bootstrap_narrow_page.css" />
-    </head>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../bootstrap_narrow_page.css"/>
+</head>
 
-    <body>
+<body>
 
-        <div id="wrap">
-            <div class="container">
+<div id="wrap">
+    <div class="container">
 
-                <div class="page-header">
-                    <h1>
-                        <a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
-                        <small class="pull-right">Comparaison de cartes avec glissière</small>
-                    </h1>
-                </div>
+        <div class="page-header">
+            <h1>
+                <a href="http://www.geopicardie.fr"><img
+                        src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie"/></a>
+                <small class="pull-right">Comparaison de cartes avec glissière</small>
+            </h1>
+        </div>
 
-                <ol class="breadcrumb">
-                    <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
-                    <li><a href="..">Boîte à outils</a></li>
-                    <li class="active">Comparaison de cartes avec glissière</li>
-                </ol>
+        <ol class="breadcrumb">
+            <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+            <li><a href="..">Boîte à outils</a></li>
+            <li class="active">Comparaison de cartes avec glissière</li>
+        </ol>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <form>
-                            <select id="left_layer" class="form-control">
-                            </select>
-                        </form>
-                    </div>
-                    <div class="col-md-6">
-                        <form>
-                            <select id="right_layer" class="form-control">
-                            </select>
-                        </form>
-                    </div>
-                </div>
-
-				<p>&nbsp;</p>
-
-                <div class="row">
-                    <div class="well" style="padding: 0;">
-                        <div id="map" style="height: 400px"></div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <select id="left_layer" class="form-control">
+                    </select>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <select id="right_layer" class="form-control">
+                    </select>
+                </form>
             </div>
         </div>
 
-        <div id="footer">
-            <div class="container">
-                <p>Outil réalisé à l'aide de <a href="http://leafletjs.com/" target="_blank">Leaflet</a>,
-                    <a href="https://github.com/digidem/leaflet-side-by-side" target="_blank">Leaflet.Control.SideBySide</a>
-                    [<a href="https://github.com/geopicardie/geopicardie-simple-web-apps" target="_blank">code source</a>].</p>
+        <p>&nbsp;</p>
+
+        <div class="row">
+            <div class="well" style="padding: 0;">
+                <div id="map" style="height: 400px"></div>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Leaflet library -->
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<div id="footer">
+    <div class="container">
+        <p>Outil réalisé à l'aide de <a href="http://leafletjs.com/" target="_blank">Leaflet</a>,
+            <a href="https://github.com/digidem/leaflet-side-by-side" target="_blank">Leaflet.Control.SideBySide</a>.
+            Code source&nbsp;: <a href="https://github.com/geopicardie/geopicardie-simple-web-apps" target="_blank">github.com/geopicardie</a>.
+        </p>
+    </div>
+</div>
 
-        <!-- Leaflet map sync library -->
-        <script src="../lib/leaflet-side-by-side/leaflet-side-by-side.js"></script>
+<!-- Leaflet library -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+        integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+        crossorigin=""></script>
 
-        <!-- JQuery library -->
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<!-- Leaflet side by side library -->
+<script src="../lib/leaflet-side-by-side/leaflet-side-by-side.js"></script>
 
-        <!-- Bootstrap library -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- JQuery library -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-        <!-- Custom javascript -->
-        <script type="text/javascript" src="map_options.js"></script>
-        <script type="text/javascript" src="main.js"></script>
+<!-- Bootstrap library -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
-    </body>
+<!-- Custom javascript -->
+<script type="text/javascript" src="map_options.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
 </html>

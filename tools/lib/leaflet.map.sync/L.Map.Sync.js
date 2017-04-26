@@ -3,33 +3,57 @@
  */
 
 (function () {
-    'use strict';
+    var NO_ANIMATION = {
+        animate: false,
+        reset: true
+    };
 
     L.Map = L.Map.extend({
         sync: function (map, options) {
             this._initSync();
-            options = options || {};
+            options = L.extend({
+                noInitialSync: false,
+                syncCursor: false,
+                syncCursorMarkerOptions: {
+                    radius: 10,
+                    fillOpacity: 0.3,
+                    color: '#da291c',
+                    fillColor: '#fff'
+                }
+            }, options);
 
             // prevent double-syncing the map:
-            var present = false;
-            this._syncMaps.forEach(function (other) {
-                if (map === other) {
-                    present = true;
-                }
-            });
-
-            if (!present) {
+            if (this._syncMaps.indexOf(map) === -1) {
                 this._syncMaps.push(map);
             }
 
             if (!options.noInitialSync) {
-                map.setView(this.getCenter(), this.getZoom(), {
-                    animate: false,
-                    reset: true
-                });
+                map.setView(this.getCenter(), this.getZoom(), NO_ANIMATION);
+            }
+            if (options.syncCursor) {
+                map.cursor = L.circleMarker([0, 0], options.syncCursorMarkerOptions).addTo(map);
+
+                this._cursors.push(map.cursor);
+
+                this.on('mousemove', this._cursorSyncMove, this);
+                this.on('mouseout', this._cursorSyncOut, this);
             }
             return this;
         },
+
+        _cursorSyncMove: function (e) {
+            this._cursors.forEach(function (cursor) {
+                cursor.setLatLng(e.latlng);
+            });
+        },
+
+        _cursorSyncOut: function (e) {
+            this._cursors.forEach(function (cursor) {
+                // TODO: hide cursor in stead of moving to 0, 0
+                cursor.setLatLng([0, 0]);
+            });
+        },
+
 
         // unsync maps from each other
         unsync: function (map) {
@@ -39,14 +63,24 @@
                 this._syncMaps.forEach(function (synced, id) {
                     if (map === synced) {
                         self._syncMaps.splice(id, 1);
+                        if (map.cursor) {
+                            map.cursor.removeFrom(map);
+                        }
                     }
                 });
             }
+            this.off('mousemove', this._cursorSyncMove, this);
+            this.off('mouseout', this._cursorSyncOut, this);
 
             return this;
         },
 
-        // overload methods on originalMap to replay on _syncMaps;
+        // Checks if the maps is synced with anything
+        isSynced: function () {
+            return (this.hasOwnProperty('_syncMaps') && Object.keys(this._syncMaps).length > 0);
+        },
+
+        // overload methods on originalMap to replay interactions on _syncMaps;
         _initSync: function () {
             if (this._syncMaps) {
                 return;
@@ -54,6 +88,7 @@
             var originalMap = this;
 
             this._syncMaps = [];
+            this._cursors = [];
 
             L.extend(originalMap, {
                 setView: function (center, zoom, options, sync) {
@@ -86,19 +121,27 @@
 
             originalMap.on('zoomend', function () {
                 originalMap._syncMaps.forEach(function (toSync) {
-                    toSync.setView(originalMap.getCenter(), originalMap.getZoom(), {
-                        animate: false,
-                        reset: false
-                    });
+                    toSync.setView(originalMap.getCenter(), originalMap.getZoom(), NO_ANIMATION);
                 });
             }, this);
+
+            originalMap.on('dragend', function () {
+                originalMap._syncMaps.forEach(function (toSync) {
+                    toSync.fire('moveend');
+                });
+            });
 
             originalMap.dragging._draggable._updatePosition = function () {
                 L.Draggable.prototype._updatePosition.call(this);
                 var self = this;
                 originalMap._syncMaps.forEach(function (toSync) {
                     L.DomUtil.setPosition(toSync.dragging._draggable._element, self._newPos);
-                    toSync.fire('moveend');
+                    toSync.eachLayer(function (layer) {
+                        if (layer._google !== undefined) {
+                            layer._google.setCenter(originalMap.getCenter());
+                        }
+                    });
+                    toSync.fire('move');
                 });
             };
         }

@@ -1,9 +1,18 @@
 Leaflet.Sync
 ============
 
-Synchronized view of two maps. Tested with Leaflet 0.7.x and Leaflet 0.8-dev (48677f2).
+Synchronized view of two maps. Tested with Leaflet 0.7.7 and 1.0.0-rc.1.
 
 [More information in original blog post by @turban](http://blog.thematicmapping.org/2013/06/creating-synchronized-view-of-two-maps.html)
+
+Installation
+------------
+
+Using npm for browserify `npm install leaflet.sync` (and `require('leaflet.sync')`), or just download `L.Map.Sync.js` and add a script tag for it in you html.
+
+What's new ?
+-----
+Add synchronized cursors between synced maps to compare more accurately.
 
 Usage
 -----
@@ -32,18 +41,24 @@ API
 ---
 
 ### `mapA.sync(mapB, [options])`
-Replays all interaction on `mapA` on `mapB` to keep their views synchronised. Initially applies the view of `mapA` to `mapB`.
+Replays all interaction on `mapA` on `mapB` to keep their views synchronized. Initially synchronizes the view of `mapA` to `mapB`.
 
-Optional `options` map:
+Optional `options`:
 ```JavaScript
 {
-	noInitialSync: true // disables initial synchronisation of the maps.
+    noInitialSync: true, // disables initial synchronization of the maps.
+    syncCursor: true // add a circle marker on the synced map
 }
 ```
 
 ### `mapA.unsync(mapB)`
 
-Removes synchronisation.
+Removes synchronization.
+
+### `mapA.isSynced()`
+
+Returns true if the map is synchronized with any other map.
+
 
 Known issues
 ------------
@@ -58,6 +73,3 @@ Install dependencies and run tests:
 npm install && npm test
 ```
 or load `test/index.html` in your browser after installing the dependencies by running `npm install`.
-
-
-
