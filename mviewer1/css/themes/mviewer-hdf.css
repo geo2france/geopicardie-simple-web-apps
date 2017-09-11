@@ -1,0 +1,26 @@
+/*Panel Title*/
+
+.mv-title {
+    background-image: none !important;
+}
+
+#panel-header.ui-header{
+    background-image: url(../../img/logo/logo-rhdf.jpg);
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: 0px center;
+}
+
+.ui-icon-layerstatus0:after {
+	background-image: url(../../img/btn/layerstatus0.svg);
+    background-color: rgba(0,0,0,0)!important;
+}
+
+.ui-icon-layerstatus1:after {
+	background-image: url(../../img/btn/layerstatus1.svg);
+    background-color: rgba(0,0,0,0)!important;
+}
+.ui-icon-layerstatus2:after {
+	background-image: url(../../img/btn/layerstatus2.svg);
+    background-color: rgba(0,0,0,0)!important;
+}

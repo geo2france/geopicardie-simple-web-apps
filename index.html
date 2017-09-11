@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Intégration &amp; développements</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap_narrow_page.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+body {
+    width:100%%;
+    height:100%;
+}
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.app-box {
+    height: 20em;
+    overflow: auto;
+}
+
+.app-box h3 {
+    margin-top: 5px;
+}
+
+.app-box ul li {
+    margin-left: -1em;
+}
+
+.app-box hr {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.footer {
+    position:absolute;
+    bottom: 0px;
+    width: 85%;
+    margin-bottom: 2em;
+}
+
+span.label.label-info {
+  margin-left: 5px;
+}
+
+h1 {
+    padding-left: 15px;
+}
+
+</style>
+<body>
+<div id="wrap">
+    <div class="container">
+
+        <div class="page-header">
+            <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
+                <small class="pull-right">Développements et intégration</small></h1>
+            <ol class="breadcrumb">
+                <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+                <li class="active">Développements &amp; intégration</li>
+            </ol>
+            <p>Outils, applications et exemples d'intégrations réalisés dans un but démonstratif
+                des capacités d'ouverture et d'interopérabilité des services web de GéoPicardie.</p>
+        </div>
+
+        <div id="listeExemples">
+            <div class="wrap" id="exemple">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="well app-box">
+                            <h3><a href="./tools/index.html">Utilitaires</a></h3>
+                            <hr>
+                            <p><strong>Utilitaires divers</strong></p>
+                            <ul>
+                                <li>Partage d'un lieu</li>
+                                <li>Comparaison de cartes côte à côte</li>
+                                <li>Comparaison de cartes avec une glissière</li>
+                                <li>Conversion de coordonnées</li>
+                            </ul>
+                            <div class="footer">
+                                <div class="align-right">
+                                    <div class="btn-group btn-group-s">
+                                        <a href="./tools/index.html" class="btn btn-success"></span> Y aller...</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="well app-box">
+                            <h3><a href="./demos/index.html">Leaflet et OpenLayers</a></h3>
+                            <hr>
+                            <p><strong>Démonstrations avec Leaflet et OpenLayers</strong></p>
+                            <p>Exemples de développements simples mettant en valeur des données géographiques
+                                via les services web de GéoPicardie.
+                            </p>
+                            <p>
+                                Ces applications ont été réalisées à l'aide de bibliothèques javascript et css libres.
+                            </p>
+                            <div class="footer">
+                                <div class="align-right">
+                                    <div class="btn-group btn-group-s">
+                                        <a href="./demos/index.html" class="btn btn-success"></span> Y aller...</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="well app-box">
+                            <h3><a href="./demos/index.html">mviewer <span class="small">(version 1)</span></a></h3>
+                            <hr>
+                            <p><strong>Exemples mviewer</strong></p>
+                            <p>Intégration des services web de GéoPicardie dans des applications web plus
+                                riches basées sur la version 1 de l'application libre mviewer développée par la Région Bretagne.
+                            </p>
+                            <div class="footer">
+                                <div class="align-right">
+                                    <div class="btn-group btn-group-s">
+                                        <a href="./mviewer1/apps/index.html" class="btn btn-success"></span> Y aller...</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Fin de row -->
+
+
+            </div><!-- Fin exemple -->
+        </div><!-- Fin listeExemples -->
+
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+/*$('.carousel').carousel({
+  interval: 2000
+});*/
+});
+</script>
+
+
+</body>
+</html>

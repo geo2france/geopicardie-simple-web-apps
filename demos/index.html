@@ -1,132 +1,95 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>GéoPicardie - Démonstrations</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="fr">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
-
-	  <!-- Bootstrap styles -->
-	  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-
-		<!-- Custom styles -->
-		<link rel="stylesheet" href="bootstrap_narrow_page.css" />
-
-	</head>
-
-	<body>
-    <div id="wrap">
-			<div class="container">
-
-				<div class="page-header">
-				  <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
-				  <small class="pull-right">Démonstrations de l'exploitation des services web</small></h1>
-	        <p>Quelques démonstrations de l'exploitation des services web (flux de données) de GéoPicardie dans des pages web.</p>
-	        <p>Ces exemples montrent qu'il est assez simple d'intégrer dans votre site web une cartographie dynamique capable d'exploiter la richesse du patrimoine de données géographiques mutualisé au travers de GéoPicardie.</p>
-				</div>
-
-				<ol class="breadcrumb">
-				  <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
-				  <li class="active">Démonstrations</li>
-				</ol>
-
-				<div class="col-md-12">
-			    <h3>L'éolien en Picardie <small>Présentation de données sur le domaine éolien en Picardie</small></h3>
-
-					<div class="row">
-					  <!--div class="col-md-1">.col-md-1</div-->
-					  <div class="col-md-3">
-							<a href="./eolien"><img src="./eolien/img/illustration.png" alt="Illustration - éolien" class="img-thumbnail"></a>
-						</div>
-					  <div class="col-md-9">
-					    <p>Cette démonstration présente une agrégation de flux de données dans une même carte internet dynamique. Les données affichées concernent le secteur éolien et proviennent de différents serveurs de données (Prodige Picardie administré par la DREAL, les applications Cartelie des trois DDT/DDTM et le portail de GéoPicardie) motorisés par des logiciels différents. </p>
-
-					    <a class="btn btn-default btn-sm pull-right" href="./eolien">Lancer la démonstration &raquo;</a>
-						</div>
-					</div>
-
-			    <hr>
-
- 				</div>
+<head>
+    <title>GéoPicardie - Démonstrations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap_narrow_page.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
 
 
-				<div class="col-md-12">
-			    <h3>Saint-Quentin <small>Équipements sportifs</small></h3>
+<body>
+<div id="wrap">
+    <div class="container">
 
-					<div class="row">
-					  <!--div class="col-md-1">.col-md-1</div-->
-					  <div class="col-md-3">
-							<a href="./saint_quentin"><img src="./saint_quentin/img/illustration.png" alt="Illustration - Saint-Quentin" class="img-thumbnail"></a>
-						</div>
-					  <div class="col-md-9">
-					    <p>Petite démonstration de l'utilisation conjointe de l'ortho-photographie très haute résolution de l'agglomération de Saint-Quentin et de données thématiques au format GeoJSON.</p>
+        <div class="page-header">
+            <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
+                <small class="pull-right">Démonstrations de l'exploitation des services web</small></h1>
+            <ol class="breadcrumb">
+                <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
+                <li><a href="http://www.geopicardie.fr/files">Intégration &amp; développements</a></li>
+                <li class="active">Démonstrations</li>
+            </ol>
+            <p>Applications simples démontrant l'exploitation des services web (flux de données) de GéoPicardie.</p>
+        </div>
 
-					    <a class="btn btn-default btn-sm pull-right" href="./saint_quentin">Lancer la démonstration &raquo;</a>
-						</div>
-					</div>
+        <div class="col-md-12">
+            <h3>L'éolien en Picardie <small>Présentation de données sur le domaine éolien en Picardie</small></h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="./eolien"><img src="./eolien/img/illustration.png" alt="Illustration - éolien" class="img-thumbnail"></a>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Cette démonstration présente une agrégation de flux de données dans une même carte internet dynamique. Les données affichées concernent le secteur éolien et proviennent de différents serveurs de données (Prodige Picardie administré par la DREAL, les applications Cartelie des trois DDT/DDTM et le portail de GéoPicardie) motorisés par des logiciels différents. </p>
+                        <a class="btn btn-default btn-sm pull-right" href="./eolien">Lancer la démonstration &raquo;</a>
+                    </div>
+                </div>
+            <hr>
+        </div>
 
-			    <hr>
+        <div class="col-md-12">
+            <h3>Saint-Quentin <small>Équipements sportifs</small></h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="./saint_quentin"><img src="./saint_quentin/img/illustration.png" alt="Illustration - Saint-Quentin" class="img-thumbnail"></a>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Petite démonstration de l'utilisation conjointe de l'ortho-photographie très haute résolution de l'agglomération de Saint-Quentin et de données thématiques au format GeoJSON.</p>
+                        <a class="btn btn-default btn-sm pull-right" href="./saint_quentin">Lancer la démonstration &raquo;</a>
+                    </div>
+                </div>
+            <hr>
+        </div>
 
- 				</div>
+        <div class="col-md-12">
+            <h3>Sites de la Grande Guerre - 1 <small>Information sommaire</small></h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="./grande_guerre"><img src="./grande_guerre/img/illustration.png" alt="Illustration - Grande Guerre" class="img-thumbnail"></a>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Carte présentant la localisation et quelques informations sommaires sur des sites remarquables du souvenir du département de la Somme. Elle montre de quelle manière des données propres à un organisme peuvent être superposées à des données mutualisées dans le cadre de GéoPicardie et disponibles via des services web. </p>
+                        <a class="btn btn-default btn-sm pull-right" href="./grande_guerre">Lancer la démonstration &raquo;</a>
+                    </div>
+                </div>
+            <hr>
+        </div>
 
- 				<div class="col-md-12">
-			    <h3>Sites de la Grande Guerre - 1 <small>Information sommaire</small></h3>
+        <div class="col-md-12">
+            <h3>Sites de la Grande Guerre - 2 <small>Information détaillée</small></h3>
 
-					<div class="row">
-					  <!--div class="col-md-1">.col-md-1</div-->
-					  <div class="col-md-3">
-							<a href="./grande_guerre"><img src="./grande_guerre/img/illustration.png" alt="Illustration - Grande Guerre" class="img-thumbnail"></a>
-						</div>
-					  <div class="col-md-9">
-					    <p>Carte présentant la localisation et quelques informations sommaires sur des sites remarquables du souvenir du département de la Somme. Elle montre de quelle manière des données propres à un organisme peuvent être superposées à des données mutualisées dans le cadre de GéoPicardie et disponibles via des services web. </p>
-
-					    <a class="btn btn-default btn-sm pull-right" href="./grande_guerre">Lancer la démonstration &raquo;</a>
-						</div>
-					</div>
-
-			    <hr>
-
- 				</div>
-
-				<div class="col-md-12">
-			    <h3>Sites de la Grande Guerre - 2 <small>Information détaillée</small></h3>
-
-					<div class="row">
-					  <!--div class="col-md-1">.col-md-1</div-->
-					  <div class="col-md-3">
-							<a href="./grande_guerre_2"><img src="./grande_guerre_2/img/illustration.png" alt="Illustration - Grande Guerre" class="img-thumbnail"></a>
-						</div>
-					  <div class="col-md-9">
-					    <p>Petite application affichant des informations descriptives de sites de mémoires de la Grande Guerre dans le département de la Somme. </p>
-
-					    <a class="btn btn-default btn-sm pull-right" href="./grande_guerre_2">Lancer la démonstration &raquo;</a>
-						</div>
-					</div>
-
-			    <hr>
-
- 				</div>
-
-
-			</div>
-		</div>
-
-
-    <div id="footer">
-
-
-      <div class="container">
-				<p><small>Ces exemples sont écrits en html et javascript. Ils utilisent des compososants logiciels libres et/ou gratuits : OpenLayers, Leaflet, Bootstrap, Nominatim, geonames.org...</small></p>
-      </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="./grande_guerre_2"><img src="./grande_guerre_2/img/illustration.png" alt="Illustration - Grande Guerre" class="img-thumbnail"></a>
+                    </div>
+                    <div class="col-md-9">
+                        <p>Petite application affichant des informations descriptives de sites de mémoires de la Grande Guerre dans le département de la Somme. </p>
+                        <a class="btn btn-default btn-sm pull-right" href="./grande_guerre_2">Lancer la démonstration &raquo;</a>
+                    </div>
+                </div>
+            <hr>
+        </div>
     </div>
-
-		<!-- JQuery library -->
-		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-
-		<!-- Bootstrap library -->
-	  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
-	</body>
+</div>
+<div id="footer">
+    <div class="container">
+        <p><small>Ces exemples sont écrits en html et javascript. Ils utilisent des compososants logiciels libres et/ou gratuits : OpenLayers, Leaflet, Bootstrap, Nominatim, geonames.org...</small></p>
+    </div>
+</div>
+</body>
 </html>

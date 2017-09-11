@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!--<mapoptions projection="EPSG:2154" extent="145518,6726671,372058,6868691"  />-->
+    <application
+        title="Eoliennes"
+        logo=""
+        help=""
+        panelfooterimage="img/logo/logo_horizontal_hdf.jpg"
+        panelfooterheight="110px"
+        exportpng="false"
+        legend="true"
+        measuretools="true"
+        legendasimage="false"
+        popup="false"
+        print="false"
+        style="css/themes/hdf.css"/>
+    <mapoptions
+        maxzoom="18"
+        projection="EPSG:2154"
+        center="680000,6995000"
+        zoom="7"
+        projextent="-378305.81, 1212610.74 , 6093283.21, 7186901.68" />
+
+    <!--
+    L'attribut style = "gallery" permet d'afficher les fonds de carte dans une liste avec incrustation de vignette pour chaque layer
+    L'attribut style = "default" permet d'afficher la liste des couches de fond sous forme d'un groupe de boutons.
+    -->
+    <baselayers style="gallery"><!-- style="default"||gallery" -->
+        <baselayer
+                type="WMS"
+                id="osm-geopic-bright-wms"
+                label="OSM - GéoPicardie fond contrasté"
+                title="OpenStreetMap - fond GéoPicardie contrasté"
+                thumbgallery="apps/eolien/basemap/osm.geopicardie.bright.png"
+                url="http://osm.geopicardie.fr/mapproxy/service"
+                layers="bright"
+                format="image/png"
+                tiled="false"
+                attribution="Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'&gt;OpenStreetMap &lt;/a&gt;,  &lt;a href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a&gt;"
+                visible="false"/>
+        <baselayer
+                type="WMS"
+                id="osm-geopic-faded-wms"
+                label="OSM - GéoPicardie fond délavé"
+                title="OpenStreetMap - fond GéoPicardie en demi-teintes"
+                thumbgallery="apps/eolien/basemap/osm.geopicardie.faded.png"
+                url="http://osm.geopicardie.fr/mapproxy/service"
+                layers="faded"
+                format="image/png"
+                tiled="false"
+                attribution="Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'&gt;OpenStreetMap &lt;/a&gt;,  &lt;a href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a&gt;"
+                visible="false"/>
+        <baselayer
+                type="WMS"
+                id="osm-geopic-grey-wms"
+                label="OSM - GéoPicardie fond en niveaux de gris"
+                title="OpenStreetMap - fond GéoPicardie en niveaux de gris"
+                thumbgallery="apps/eolien/basemap/osm.geopicardie.grey.png"
+                url="http://osm.geopicardie.fr/mapproxy/service"
+                layers="grey"
+                format="image/png"
+                tiled="false"
+                attribution="Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'&gt;OpenStreetMap &lt;/a&gt;,  &lt;a href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a&gt;"
+                visible="true"/>
+    </baselayers>
+    <authentification
+        url="who"
+        loginurl="?login"
+        logouturl="../j_spring_security_logout"
+        enabled="true"/>
+    <proxy url="../proxy/?url="/>
+    <olscompletion
+        url="http://api-adresse.data.gouv.fr/search/"
+        type="ban"
+        attribution="La recherche d'adresse est un service proposé par l'API adresse.data.gouv.fr"/>
+    <searchparameters
+        bbox="true"
+        localities="true"
+        features="true"/>
+    <widgets>
+       <!--widget name="gauge"/-->
+    </widgets>
+    <themes>
+        <theme name="Eolien"  id="eolien" collapsed="false">
+            <layer id="layer26" name="Mâts éoliens" visible="true" tiled="true"
+                queryable="false"
+                url="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map"
+                legendurl="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map&amp;service=WMS&amp;version=1.1.1&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=layer26&amp;format=image/png&amp;STYLE="
+                attribution="DREAL Hauts-de-France"
+                metadata="http://metadata.carmen.developpement-durable.gouv.fr/geosource/24/fre/find?uuid=NPDC_SIP_MAT_EOLIEN"
+                metadata-csw="http://metadata.carmen.developpement-durable.gouv.fr/geosource/24/fre/xml_iso19139?uuid=NPDC_SIP_MAT_EOLIEN" />
+            <layer id="layer29" name="ZFE" visible="false" tiled="true"
+                queryable="false"
+                url="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map"
+                opacity="0.50"
+                legendurl="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map&amp;service=WMS&amp;version=1.1.1&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=layer29&amp;format=image/png&amp;STYLE="
+                attribution="DREAL Hauts-de-France" />
+            <layer id="layer27" name="Parcs éoliens"
+                scalemin="100"
+                scalemax="100000"
+                visible="false" tiled="true"
+                queryable="false"
+                url="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map"
+                legendurl="http://ws.carmen.developpement-durable.gouv.fr/cgi-bin/mapserv?map=/mnt/data_carmen/NPDC/Publication/eolien.map&amp;service=WMS&amp;version=1.1.1&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=layer27&amp;format=image/png&amp;STYLE="
+                attribution="DREAL Hauts-de-France"/>
+        </theme>
+        <theme name="Limites administratives"  collapsed="true" id="territoire">
+            <layer id="ign_bdtopo_departements_pic" name="Départements de Picardie" visible="true" tiled="true"
+                queryable="false"
+                url="http://www.geopicardie.fr/geoserver/autres_wms_only/ows"
+                style="dept_bdtopo_trait_noir_etiquette"
+                opacity="0.75"
+                attribution="IGN - BDTOPO"
+                metadata="http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=xxx"
+                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=xxx" />
+            <layer id="osm_epci_reels_2015" name="EPCI de Picardie" visible="false" tiled="true"
+                queryable="false"
+                url="http://www.geopicardie.fr/geoserver/autres/ows"
+                style="polygone_bord_noir"
+                opacity="0.75"
+                attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
+                metadata="https://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
+                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
+            <layer id="osm_communes_complet_2015" name="Communes de Picardie" visible="false" tiled="true"
+                queryable="false"
+                url="http://www.geopicardie.fr/geoserver/autres/ows"
+                style="polygone_bord_noir"
+                opacity="0.75"
+                attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
+                metadata="https://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
+                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
+        </theme>
+        <theme name="Photographies aériennes"  collapsed="true" id="ortho">
+            <layer id="ortho_2015_rgb" name="Orthophotographie du Nord Pas de Calais 2015" visible="true" tiled="true"
+                queryable="false"
+                url="https://www.ppige-npdc.fr/geoserver/opendata/ows"
+                opacity="0.50"
+                attribution="PPIGE"
+                metadata="https://open.isogeo.com/s/cc1ba385918d40cc8078063121873550/m0_ZBCtJU3nJj1S3Q2FIAa6u_KZ70/m/30059a7247474b559830e0fe525191d1"
+                metadata-csw="https://open.isogeo.com/api/resources/30059a7247474b559830e0fe525191d1.xml?s=cc1ba385918d40cc8078063121873550&amp;token=m0_ZBCtJU3nJj1S3Q2FIAa6u_KZ70" />
+            <layer id="picardie_ortho_ign_2013_vis" name="Orthophotographie de la Picardie 2013" visible="true" tiled="true"
+                queryable="false"
+                url="http://www.geopicardie.fr/geoserver/geopicardie/ows"
+                opacity="0.50"
+                attribution="IGN - GéoPicardie"
+                metadata="http://www.geopicardie.fr/geonetwork/srv/fre/xml_iso19139?uuid=1e8a0bc9-400a-4959-b3c8-3b46757fde96"
+                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=1e8a0bc9-400a-4959-b3c8-3b46757fde96" />
+        </theme>
+    </themes>
+</config>
