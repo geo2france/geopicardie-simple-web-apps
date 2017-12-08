@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>GéoPicardie - Grande Guerre</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>GéoPicardie - Grande Guerre</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico"
+          type="image/vnd.microsoft.icon"/>
 
-		<!-- Bootstrap styles -->
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
 
-		<!-- Leaflet styles -->
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
-		<link rel="stylesheet" href="popup.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+    <!-- Leaflet styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+          integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+          crossorigin=""/>
 
-		<!-- Bootstrap library -->
-		<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="popup.css"/>
 
-		<!-- Leaflet library -->
-		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-		<script src="../lib/leaflet_oms/oms.min.js"></script>
+    <!-- Bootstrap library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
-		<!-- JQuery library -->
-		<script src="../lib/jquery/jquery.min.js"></script>
+    <!-- Leaflet library -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+            integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+            crossorigin=""></script>
+    <script src="../lib/leaflet_oms/oms.min.js"></script>
 
-		<!-- Custom Leaflet application -->
-		<script type="text/javascript">
+    <!-- JQuery library -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+    <!-- Custom Leaflet application -->
+    <script type="text/javascript">
 
 			$(document).ready(function() {
 
@@ -39,7 +47,7 @@
 				var subsetDefaultWidth = 0.002; // in degrees
 				var markerLayer = null;
 
-				scan25_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+				scan25_layer = L.tileLayer.wms("https://www.geopicardie.fr/geoserver/wms?", {
 					layers: 'geopicardie:picardie_scan25',
 					format: 'image/jpeg',
 					transparent: false,
@@ -161,39 +169,44 @@
 
 			});
 
-	  </script>
-	</head>
 
-	<body>
-		<div class="container">
-			<div class="page-header">
-			  <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
-			  <small class="pull-right">Sites de la Grande Guerre - 2</small></h1>
-			</div>
 
-			<ol class="breadcrumb">
-			  <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
-			  <li><a href="..">Démonstrations</a></li>
-			  <li class="active">Sites de la Grande Guerre - 2</li>
-			</ol>
+    </script>
+</head>
 
-			<div class="row">
-			  <div class="col-md-4 list-group" id="feature-list">
-					<span class="list-group-item">Liste des sites</span>
-			  </div>
-			  <div class="col-md-8">
-			    <div class="row">
-						<div class="well" style="padding: 10; height: 350px">
-							<div class="well" style="height: 250px; width: 250px; padding:2px; float: right;">
-								<div id="map" style="height: 250px; width: 250px"></div>
-					  	</div>
-		      		<h3 id="site-name">Nom du site</h3>
-							<p id="site-descr">Description du site</p>
-		      	</div>
-			    </div>
-			  </div>
-			</div>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1><a href="https://www.geopicardie.fr"><img src="https://www.geopicardie.fr/files/logos/logo_geopicardie.gif"
+                                                      alt="GéoPicardie"/></a>
+            <small class="pull-right">Sites de la Grande Guerre - 2</small>
+        </h1>
+    </div>
 
-		</div>
-	</body>
+    <ol class="breadcrumb">
+        <li><a href="https://www.geopicardie.fr">GéoPicardie</a></li>
+        <li><a href="../../index.html">Développements &amp; intégration</a></li>
+        <li><a href="../index.html">Leaflet &amp; OpenLayers</a></li>
+        <li class="active">Sites de la Grande Guerre - 2</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-md-4 list-group" id="feature-list">
+            <span class="list-group-item">Liste des sites</span>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="well" style="padding: 10; height: 350px">
+                    <div class="well" style="height: 250px; width: 250px; padding:2px; float: right;">
+                        <div id="map" style="height: 250px; width: 250px"></div>
+                    </div>
+                    <h3 id="site-name">Nom du site</h3>
+                    <p id="site-descr">Description du site</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
 </html>

@@ -1,0 +1,44 @@
+body {
+    width:100%;
+    height:100%;
+}
+
+.app-box {
+    height: 20em;
+    overflow: auto;
+}
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+	flex-flow: column nowrap;
+}
+
+.flex-grow {
+	display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+.app-box span.label.label-info {
+  margin-left: 5px;
+}
+
+.app-box h3 {
+    margin-top: 5px;
+}
+
+.app-box ul li {
+    margin-left: -1em;
+}
+
+.app-box hr {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.app-box .btn {
+    margin-left: 1%;
+    float: right;
+}

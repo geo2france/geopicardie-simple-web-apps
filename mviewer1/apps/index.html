@@ -1,127 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Exemples de configuration mviewer</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="../favicon.png" />
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Exemples de configuration mviewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="https://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico"/>
+    <link rel="stylesheet" href="../../common/css/bootstrap_narrow_page.css"/>
+    <link rel="stylesheet" href="../../common/css/app_box.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<style>
-body {
-      	width:100%%;
-        height:100%;
-      
-      }
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-}
-.app-box {
-    height: 25em;
-    overflow: auto;
-}
 
-.centered {
-    text-align:center;
-}
-
-.footer {
-    position:absolute;
-    bottom: 0px;
-    width: 85%;
-    margin-bottom: 2em;
-}
-
-span.label.label-info {
-  margin-left: 5px;
-}
-
-h1 {
-    padding-left: 15px;
-}
-
-</style>
 <body>
-    <div class="page-header">
-        <h1>Cartes dynamiques</h1>
+<div id="wrap">
+    <div class="container">
+
+        <div class="page-header">
+            <h1><a href="https://www.geopicardie.fr"><img
+                    src="https://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie"/></a>
+                <small class="pull-right">mviewer 1</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="https://www.geopicardie.fr">GéoPicardie</a></li>
+                <li><a href="../../index.html">Développements &amp; intégration</a></li>
+                <li class="active">Exemples mviewer 1</li>
+            </ol>
+            <p>Applications réalisées avec mviewer 1.</p>
+        </div>
+
+        <div class="wrap">
+            <div class="row app_list">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="well app-box flex-col">
+                        <div>
+                            <p class="text-right"><span class="label label-info">Energie</span><span
+                                    class="label label-info">Environnement</span>
+                            </p>
+                            <h3>Eolien</h3>
+                            <hr>
+                        </div>
+                        <div class="flex-col flex-grow">
+                            <strong>Carte régionale de l'éolien</strong>
+                            <p>Données publiées sur Carmen Hauts-de-France par la DREAL combinées aux référentiels
+                                cartographiques de GéoPicardie et PPIGE.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="../?config=apps/eolien/config.xml" target="_blank"
+                               class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-globe"></span> Lancer
+                                l'application</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="well app-box flex-col">
+                        <div>
+                            <p class="text-right"><span class="label label-info">Equipements</span><span
+                                    class="label label-info">Formation</span><span
+                                    class="label label-info">Enseignement</span>
+                            </p>
+                            <h3>Lycées</h3>
+                            <hr>
+                        </div>
+                        <div class="flex-col flex-grow">
+                            <strong>Carte régionale des lycées</strong>
+                            <p>Cartographie établie par la Région Hauts-de-France de l'ensemble des lycées du
+                                territoire, y
+                                compris les lycées professionels, agricoles qu'ils soient privés ou publics.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="../?config=apps/lycees/config.xml" target="_blank"
+                               class="btn-xs btn btn-primary"><span class="glyphicon glyphicon-globe"></span> Lancer
+                                l'application</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="well app-box flex-col">
+                        <div>
+                            <p class="text-right"><span class="label label-info">Cadastre</span><span
+                                    class="label label-info">Urbanisme</span>
+                            </p>
+                            <h3>Cadastre</h3>
+                            <hr>
+                        </div>
+                        <div class="flex-col flex-grow">
+                            <strong>Consultation de la partie graphique du cadastre</strong>
+                            <p>Cartographie établie à partie des flux de données de la DGFiP et des référentiels de
+                                GéoPicardie
+                                et de la PPIGE.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="../?x=265972&y=6419425&z=15&l=Orthophotographie%2520de%2520la%2520Picardie%25202013%252COrthophotographie%2520du%2520Nord%2520Pas%2520de%2520Calais%25202015%252CCommunes%2520de%2520Picardie%252CEPCI%2520de%2520Picardie%252CD%25C3%25A9partements%2520de%2520Picardie%252CCouches%2520group%25C3%25A9es%25202&lb=osm-geopic-bright-wms&config=apps%2Fcadastre%2Fconfig.xml"
+                               target="_blank" class="btn btn-xs btn-primary"><span
+                                    class="glyphicon glyphicon-globe"></span> Commune de Boves</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="listeExemples">   
-    <div class="wrap container" id="exemple">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="well app-box">
-                    <p class="text-right"><span class="label label-info">Energie</span><span class="label label-info">Environnement</span></p>
-                    <h3>Eolien - Hauts-de-France</h3>
-                    <hr>
-                    <strong>Carte régionale de l'éolien</strong>
-                    <p>Données publiées sur Carmen Hauts-de-France par la DREAL combinées aux référentiels cartographiques de GéoPicardie et PPIGE.
-                    </p>
-                    <div class="footer">
-                        <div class="centered">
-                            <div class="btn-group btn-group-xs">
-                                <a href="../?config=apps/eolien/config.xml" target="_blank" class="btn btn-primary"><span class="glyphicon glyphicon-globe"></span> Lancer l'application</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="well app-box">
-                    <p class="text-right"><span class="label label-info">Equipements</span><span class="label label-info">Formation</span><span class="label label-info">Enseignement</span></p>
-                    <h3>Lycées - Hauts-de-France</h3>
-                    <hr>
-                    <strong>Carte régionale des lycées</strong>
-                    <p>Cartographie établie par la Région Hauts-de-France de l'ensemble des lycées du territoire, y compris les lycées professionels, agricoles qu'ils soient privés ou publics.
-                    </p>
-                    <div class="footer">
-                        <div class="centered">
-                            <div class="btn-group btn-group-xs">
-                                <a href="../?config=apps/lycees/config.xml" target="_blank" class="btn btn-primary"><span class="glyphicon glyphicon-globe"></span> Lancer l'application</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="well app-box">
-                    <p class="text-right"><span class="label label-info">Cadastre</span><span class="label label-info">Urbanisme</span></p>
-                    <h3>Cadastre</h3>
-                    <hr>
-                    <strong>Consultation de la partie graphique du cadastre</strong>
-                    <p>Cartographie établie à partie des flux de données de la DGFiP et des référentiels de GéoPicardie et de la PPIGE.
-                    </p>
-                    <div class="footer">
-                        <div class="centered">
-                            <div class="btn-group btn-group-xs">
-                                <a href="../?config=apps/cadastre/config.xml" target="_blank" class="btn btn-primary"><span class="glyphicon glyphicon-globe"></span> Lancer l'application</a>
-                                <a href="../?x=265972&y=6419425&z=15&l=Orthophotographie%2520de%2520la%2520Picardie%25202013%252COrthophotographie%2520du%2520Nord%2520Pas%2520de%2520Calais%25202015%252CCommunes%2520de%2520Picardie%252CEPCI%2520de%2520Picardie%252CD%25C3%25A9partements%2520de%2520Picardie%252CCouches%2520group%25C3%25A9es%25202&lb=osm-geopic-bright-wms&config=apps%2Fcadastre%2Fconfig.xml" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span> Commune de Boves</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- Fin de row -->
-       
-
-    </div><!-- Fin exemple -->
-</div><!-- Fin listExemple -->
-    <script>
-        $(document).ready(function(){
-		/*$('.carousel').carousel({
-		  interval: 2000
-		});*/
-	  });
-    </script>
-
+</div>
 
 </body>
 </html>

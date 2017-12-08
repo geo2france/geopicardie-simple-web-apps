@@ -1,131 +1,146 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>GéoPicardie - Saint-Quentin</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>GéoPicardie - Saint-Quentin</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="http://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://www.geopicardie.fr/portail/sites/default/files/favicon_1.ico"
+          type="image/vnd.microsoft.icon"/>
 
-	  <!-- Bootstrap styles -->
-	  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
 
-		<!-- Leaflet styles -->
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <!-- Leaflet styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+          integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+          crossorigin=""/>
 
-		<!-- Leaflet context menu styles -->
-    <link rel="stylesheet" href="../lib/leaflet.contextmenu/leaflet.contextmenu.css"/>
+    <!-- Leaflet context menu styles -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.min.css"/>
 
-		<!-- Custom styles -->
-		<link rel="stylesheet" href="popup.css" />
-		<link rel="stylesheet" href="index.css" />
-		<link rel="stylesheet" href="../bootstrap_narrow_page.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="popup.css"/>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="../../common/css/bootstrap_narrow_page.css"/>
+
+</head>
+
+<body>
+<div id="wrap">
+    <div class="container">
+
+        <div class="page-header">
+            <h1><a href="https://www.geopicardie.fr"><img
+                    src="https://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie"/></a>
+                <small class="pull-right">Saint-Quentin</small>
+            </h1>
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="https://www.geopicardie.fr">GéoPicardie</a></li>
+            <li><a href="../../index.html">Développements &amp; intégration</a></li>
+            <li><a href="../index.html">Leaflet &amp; OpenLayers</a></li>
+            <li class="active">Saint-Quentin</li>
+        </ol>
 
 
-	</head>
+        <div class="row">
 
-	<body>
-    <div id="wrap">
-			<div class="container">
+            <div class="col-md-6">
+                <div class="well" style="padding: 0;">
+                    <div id="map" style="height: 400px"></div>
+                </div>
+            </div>
 
-				<div class="page-header">
-				  <h1><a href="http://www.geopicardie.fr"><img src="http://www.geopicardie.fr/files/logos/logo_geopicardie.gif" alt="GéoPicardie" /></a>
-				  <small class="pull-right">Saint-Quentin</small></h1>
-				</div>
+            <div class="col-md-6">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseMarker">
+                                    Équipement sportif
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseMarker" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <div>
+                                    <p>Équipement sportif sélectionné&nbsp;:</p>
+                                    <p>Nom : <span id="equip-nom"></span></p>
+                                    <!--p>Type : <span id="equip-cat"></span></p-->
+                                    <p>Liens : <a id="equip-fiche" href="" target="_blank">Fiche</a> <span
+                                            id="equip-link-coma">, </span> <a id="equip-agenda" href="" target="_blank">Agenda</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseZoom">
+                                    Echelle
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseZoom" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <p>Échelle&nbsp;:</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <a id="zoom_5k" href="#">rue <span class="pull-right">(5.000<small> e</small>)</span></a><br/>
+                                        <a id="zoom_25k" href="#">quartier <span class="pull-right">(25.000<small> e</small>)</span></a><br/>
+                                        <a id="zoom_100k" href="#">agglomération <span class="pull-right">(100.000<small> e</small>)</span></a><br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-				<ol class="breadcrumb">
-				  <li><a href="http://www.geopicardie.fr">GéoPicardie</a></li>
-				  <li><a href="..">Démonstrations</a></li>
-				  <li class="active">Saint-Quentin</li>
-				</ol>
-
-
-				<div class="row">
-
-		 		  <div class="col-md-6">
-						<div class="well" style="padding: 0;">
-							<div id="map" style="height: 400px"></div>
-				  	</div>
-				  </div>
-				  
-		 		  <div class="col-md-6">
-						<div class="panel-group" id="accordion">
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseMarker">
-						          Équipement sportif
-						        </a>
-						      </h4>
-						    </div>
-						    <div id="collapseMarker" class="panel-collapse collapse in">
-						      <div class="panel-body">
-										<div class="container">
-											<p>Équipement sportif sélectionné&nbsp;:</p>
-										  <p>Nom : <span id="equip-nom"></span></p>
-										  <!--p>Type : <span id="equip-cat"></span></p-->
-										  <p>Liens : <a id="equip-fiche" href="" target="_blank">Fiche</a> <span id="equip-link-coma">, </span> <a id="equip-agenda" href="" target="_blank">Agenda</a></p>
-										</div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseZoom">
-						          Echelle
-						        </a>
-						      </h4>
-						    </div>
-						    <div id="collapseZoom" class="panel-collapse collapse">
-						      <div class="panel-body">
-										<div class="container">
-			 		  					<div class="col-md-4">
-												<p>Échelle&nbsp;:</p>
-											</div>
-			 		  					<div class="col-md-8">
-											  <a id="zoom_5k" href="#">rue <span class="pull-right">(5.000<small> e</small>)</span></a><br/>
-											  <a id="zoom_25k" href="#">quartier <span class="pull-right">(25.000<small> e</small>)</span></a><br/>
-											  <a id="zoom_100k" href="#">agglomération <span class="pull-right">(100.000<small> e</small>)</span></a><br/>
-											</div>
-										</div>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-    <div id="footer">
-      <div class="container">
-        <p>Outil réalisé à l'aide de <a href="http://leafletjs.com/" target="_blank">Leaflet</a> et des services web de <a href="http://www.geopicardie.fr/" target="_blank">GéoPicardie</a>.</p>
-      </div>
     </div>
+</div>
 
-		<!-- Leaflet library -->
-		<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<div id="footer">
+    <div class="container">
+        <p>Outil réalisé à l'aide de <a href="https://leafletjs.com/" target="_blank">Leaflet</a> et des services web de
+            <a href="https://www.geopicardie.fr/" target="_blank">GéoPicardie</a>.</p>
+    </div>
+</div>
 
-		<!-- Leaflet context menu library -->
-    <script src="../lib/leaflet.contextmenu/leaflet.contextmenu.js"></script>
+<!-- Leaflet library -->
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+        integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+        crossorigin=""></script>
 
-		<!-- Leaflet oms library -->
-		<script src="../lib/leaflet_oms/oms.min.js"></script>
+<!-- Leaflet context menu library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.min.js"></script>
 
-		<!-- JQuery library -->
-		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<!-- Leaflet oms library -->
+<script src="../lib/leaflet_oms/oms.min.js"></script>
 
-		<!-- Bootstrap library -->
-	  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!-- JQuery library -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-		<!-- Custom javascript -->
-	  <script type="text/javascript" src="main.js"></script>
-	  <script type="text/javascript" src="map_options.js"></script>
+<!-- Bootstrap library -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
+<!-- Custom javascript -->
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="map_options.js"></script>
 
-	</body>
+</body>
 </html>
