@@ -106,7 +106,7 @@ $(document).ready(function() {
 	});
 
 	// Initialise the map and its layers control
-  function init_map(map_id, map_options, contextmenu_options, default_layer_index) {
+    function init_map(map_id, map_options, contextmenu_options, default_layer_index) {
 
 		// Definition of the layers available in the maps
 		var base_layers = map_options.base_map_layers;
@@ -119,35 +119,30 @@ $(document).ready(function() {
 		map.addControl(new L.control.layers(base_layers));
 
 		return map;
-  }
+    }
 
-  function zoomIn (e) {
-    map.zoomIn();
-    updateUrl();
-  }
+    function zoomIn (e) {
+        map.zoomIn();
+    }
 
-  function zoomOut (e) {
-    map.zoomOut();
-    updateUrl();
-  }
+    function zoomOut (e) {
+        map.zoomOut();
+    }
 
-  // Listeners for the toolbar
+    // Listeners for the toolbar
 	$( "#zoom_5k" ).click(function() {
 		map.setZoom(18);
-    updateUrl();
-    return false;
+        return false;
 	});
 
 	$( "#zoom_25k" ).click(function() {
 		map.setZoom(15);
-    updateUrl();
-    return false;
+        return false;
 	});
 
 	$( "#zoom_100k" ).click(function() {
 		map.setZoom(12);
-    updateUrl();
-    return false;
+        return false;
 	});
 
 });
