@@ -1,35 +1,27 @@
 $(document).ready(function() {
 
-    var scan25_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+    var scan25_layer = L.tileLayer.wms("https://www.geopicardie.fr/geoserver/wms?", {
         layers: 'geopicardie:picardie_scan25',
         format: 'image/jpeg',
         attribution: "Scan25 - IGN"
     });
 
-    var ortho_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+    var ortho_layer = L.tileLayer.wms("https://www.geopicardie.fr/geoserver/wms?", {
         layers: 'picardie_ortho_ign_2013_vis',
         format: 'image/jpeg',
         attribution: "GéoPicardie"
     });
 
-    var osm_layer = L.tileLayer.wms("http://osm.geopicardie.fr/mapproxy/service?", {
+    var osm_layer = L.tileLayer.wms("https://osm.geopicardie.fr/mapproxy/service?", {
         layers: 'bright',
         format: 'image/jpeg',
         attribution: "OpenStreetMap - GéoPicardie"
     });
 
-    var stamen_toner_layer = new L.tileLayer(
-        "http://{s}tile.stamen.com/toner/{z}/{x}/{y}.png", {
-            subdomains: ['','a.','b.','c.','d.'],
-            maxZoom: 18,
-            attribution: '<a href="http://http://stamen.com/" target="_blank">Stamen</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
-            type: 'image/jpeg'});
-
     var baseMaps = {
         "Scan25 IGN": scan25_layer,
         "OpenStreetMap - GéoPicardie": osm_layer,
-        "Images aériennes - GéoPicardie": ortho_layer,
-        "Stamen - Toner": stamen_toner_layer
+        "Images aériennes - GéoPicardie": ortho_layer
     };
 
     var mapLayersOptions = {

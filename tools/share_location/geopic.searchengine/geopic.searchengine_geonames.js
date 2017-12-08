@@ -12,7 +12,7 @@ GeonamesSearchEngine.prototype = Object.create(SearchEngine.prototype);
 
 GeonamesSearchEngine.prototype._processSearchRequest = function(callback)
 {
-  var search_request = "http://api.geonames.org/searchJSON?q=" + this.current_search_string;
+  var search_request = "https://secure.geonames.org/searchJSON?q=" + this.current_search_string;
   search_request = search_request + "&isNameRequired=true"
   
   // Language

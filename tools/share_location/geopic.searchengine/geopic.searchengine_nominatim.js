@@ -12,7 +12,7 @@ GeonamesSearchEngine.prototype = Object.create(SearchEngine.prototype);
 
 GeonamesSearchEngine.prototype._processSearchRequest = function(callback)
 {
-  var search_request = "http://api.geonames.org/searchJSON?q=" + this.current_search_string;
+  var search_request = "https://secure.geonames.org/searchJSON?q=" + this.current_search_string;
   search_request = search_request + "&isNameRequired=true"
   
   // Language
@@ -97,7 +97,7 @@ GeonamesFoundPlace.prototype = Object.create(FoundPlace.prototype);
       "name": "Nominatim",
       "found_places": [],
       "last_searched_place_name": "",
-      "query_template": "http://nominatim.openstreetmap.org/search?q=" +
+      "query_template": "https://nominatim.openstreetmap.org/search?q=" +
           "$s" +
           "&format=json&polygon=0&addressdetails=1&countrycodes=fr&limit=9" +
           "&bounded=1&viewbox=0.15, 48.75, 5.20, 51.10",
