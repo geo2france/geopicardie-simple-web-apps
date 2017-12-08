@@ -21,6 +21,9 @@
 
     <link rel="stylesheet" href="popup.css"/>
 
+    <!-- JQuery library -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
     <!-- Bootstrap library -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -31,9 +34,6 @@
             integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
             crossorigin=""></script>
     <script src="../lib/leaflet_oms/oms.min.js"></script>
-
-    <!-- JQuery library -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
     <!-- Custom Leaflet application -->
     <script type="text/javascript">
@@ -54,14 +54,14 @@
 					attribution: "Scan25 - IGN"
 				});
 
-				osm_layer = L.tileLayer.wms("http://osm.geopicardie.fr/mapproxy/service?", {
+				osm_layer = L.tileLayer.wms("https://osm.geopicardie.fr/mapproxy/service?", {
 					layers: 'bright',
 					format: 'image/png',
 					transparent: true,
 					attribution: "OpenStreetMap - GéoPicardie"
 				});
 
-				ortho_layer = L.tileLayer.wms("http://www.geopicardie.fr/geoserver/wms?", {
+				ortho_layer = L.tileLayer.wms("https://www.geopicardie.fr/geoserver/wms?", {
 					layers: 'picardie_ortho_ign_2013_vis',
 					format: 'image/png',
 					transparent: true,
@@ -177,7 +177,7 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1><a href="https://www.geopicardie.fr"><img src="https://www.geopicardie.fr/files/logos/logo_geopicardie.gif"
+        <h1><a href="https://www.geopicardie.fr"><img src="https://www.geopicardie.fr/portail/sites/default/files/logo-geopicardie_0.gif"
                                                       alt="GéoPicardie"/></a>
             <small class="pull-right">Sites de la Grande Guerre - 2</small>
         </h1>

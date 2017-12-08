@@ -2,15 +2,15 @@ $(document).ready(function() {
 
 	// Initialisation of the contextmenu options
 	var contextmenu_options = {
-		  "contextmenu": true,
-		  "contextmenuWidth": 160,
+		"contextmenu": true,
+		"contextmenuWidth": 160,
 	  	"contextmenuItems": [{
 		      "text": 'Zoom in',
-		      "icon": '../img/icons/zoom-in.png',
+		      "icon": './img/icons/zoom-in.png',
 		      "callback": zoomIn
 			  }, {
 	        "text": 'Zoom out',
-	        "icon": '../img/icons/zoom-out.png',
+	        "icon": './img/icons/zoom-out.png',
 	        "callback": zoomOut
 			  }]
   	};
@@ -21,16 +21,14 @@ $(document).ready(function() {
 	var subsetsOfFeatures = {"Toutes": []};
 	var subsetDefaultWidth = 0.002; // in degrees
 
-
-
 	var markerLayer = null;
-	var lightIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-bright.png'}});
-	var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon.png'}});
-	var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-dark.png'}});
+	var lightIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-bright.png'}});
+	var normalIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon.png'}});
+	var darkIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-dark.png'}});
 
 	var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 40});
 
-	$.getJSON('data/equipements_sportifs.js', function(data) {
+	$.getJSON('./data/equipements_sportifs.js', function(data) {
 
 		var bounds = new L.LatLngBounds();
 

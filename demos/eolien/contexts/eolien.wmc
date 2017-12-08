@@ -11,7 +11,7 @@
   <LayerList>
     <Layer queryable="0" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://osm.geopicardie.fr/mapproxy/service?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://osm.geopicardie.fr/mapproxy/service?SERVICE=WMS&amp;"/>
       </Server>
       <Name>faded</Name>
       <Title>Fond OSM GéoPicardie</Title>
@@ -39,7 +39,7 @@
     </Layer>
     <Layer queryable="0" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://osm.geobretagne.fr/gwc01/service/wms?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://osm.geobretagne.fr/gwc01/service/wms?SERVICE=WMS&amp;"/>
       </Server>
       <Name>osm:google</Name>
       <Title>Fond OSM GéoBretagne</Title>
@@ -66,7 +66,7 @@
     </Layer>
     <Layer queryable="1" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/ows?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/geopicardie/ows?SERVICE=WMS&amp;"/>
       </Server>
       <Name>picardie_ortho_ign_2013_vis</Name>
       <Title>Photographie aérienne (2013)</Title>
@@ -94,7 +94,7 @@
     </Layer>
     <Layer queryable="0" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/geopicardie/wms?SERVICE=WMS&amp;"/>
       </Server>
       <Name>picardie_scan25</Name>
       <Title>IGN Scan25</Title>
@@ -107,7 +107,7 @@
           <Title>A boring default style</Title>
           <Abstract>A sample style for rasters</Abstract>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=picardie_scan25"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/geopicardie/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=picardie_scan25"/>
           </LegendURL>
         </Style>
       </StyleList>
@@ -126,7 +126,7 @@
     </Layer>
     <Layer queryable="1" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/hdf_common/ows?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/hdf_common/ows?SERVICE=WMS&amp;"/>
       </Server>
       <Name>ocs_hdf_2009_2010</Name>
       <Title>Occupation du sol GéoPicardie (2009-2010)</Title>
@@ -138,7 +138,7 @@
           <Name/>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/geopicardie/ows?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ocs_hdf_2009_2010"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/geopicardie/ows?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ocs_hdf_2009_2010"/>
           </LegendURL>
         </Style>
       </StyleList>
@@ -157,12 +157,12 @@
     </Layer>
     <Layer queryable="1" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
       </Server>
       <Name>geopicardie:vent40m</Name>
       <Title>Modélisation de la vitesse du vent à 40 m en Picardie</Title>
       <MetadataURL>
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://ns313112.ovh.net/geonetwork/apps/georchestra/?uuid=b748e40a-c5fa-410a-8e65-d5fdacb30e15"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geonetwork/srv/fre/catalog.search#/metadata/95073ac5-8d9b-49dd-8319-2dbedb5836dd"/>
       </MetadataURL>
       <FormatList>
         <Format current="1">image/jpeg</Format>
@@ -173,7 +173,7 @@
           <Title>Vitesse du vent - dégradé du rouge au bleu</Title>
           <Abstract>Vitesse du vent - dégradé du rouge au bleu</Abstract>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vent40m"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vent40m"/>
           </LegendURL>
         </Style>
         <Style>
@@ -181,7 +181,7 @@
           <Title>Vitesse du vent - dégradé de niveaux de gris et de transparence</Title>
           <Abstract>Vitesse du vent - dégradé de niveaux de gris et de transparence</Abstract>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vent40m&amp;style=vent_niveaux_gris_et_transparence"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=vent40m&amp;style=vent_niveaux_gris_et_transparence"/>
           </LegendURL>
         </Style>
       </StyleList>
@@ -203,9 +203,6 @@
       </Server>
       <Name>layer29</Name>
       <Title>ZFE</Title>
-      <MetadataURL>
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.sigpicardie.fr/geonetwork/srv/fr/?id=6813"/>
-      </MetadataURL>
       <FormatList>
         <Format current="1">image/png</Format>
       </FormatList>
@@ -233,7 +230,7 @@
     </Layer>
     <Layer queryable="1" hidden="0">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?SERVICE=WMS&amp;"/>
       </Server>
       <Name>autres_wms_only:ign_bdtopo_departements_pic</Name>
       <Title>Départements de Picardie (BDTopo - polygones)</Title>
@@ -245,56 +242,56 @@
           <Name>dept_bdtopo_trait_noir_etiquette</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>ligne_blanche</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_blanche"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_blanche"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>polygone_bord_blanc</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_blanc"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_blanc"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>ligne_grise_epaisse</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_grise_epaisse"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_grise_epaisse"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>polygone_bord_noir_semi_transparent</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_noir_semi_transparent"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_noir_semi_transparent"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>polygone_bord_orange_transparent</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_orange_transparent"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_orange_transparent"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>polygone_bord_noir</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_noir"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=polygone_bord_noir"/>
           </LegendURL>
         </Style>
         <Style>
           <Name>ligne_noire</Name>
           <Title/>
           <LegendURL width="20" height="20" format="image/png">
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_noire"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geoserver/wms?request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=ign_bdtopo_departements_pic&amp;style=ligne_noire"/>
           </LegendURL>
         </Style>
       </StyleList>
