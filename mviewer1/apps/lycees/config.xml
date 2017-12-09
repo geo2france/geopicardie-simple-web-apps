@@ -38,7 +38,7 @@
                 label="OSM - GéoPicardie fond contrasté"
                 title="OpenStreetMap - fond GéoPicardie contrasté"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.bright.png"
-                url="http://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geopicardie.fr/mapproxy/service"
                 layers="bright"
                 format="image/png"
                 tiled="false"
@@ -50,7 +50,7 @@
                 label="OSM - GéoPicardie fond délavé"
                 title="OpenStreetMap - fond GéoPicardie en demi-teintes"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.faded.png"
-                url="http://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geopicardie.fr/mapproxy/service"
                 layers="faded"
                 format="image/png"
                 tiled="false"
@@ -62,7 +62,7 @@
                 label="OSM - GéoPicardie fond en niveaux de gris"
                 title="OpenStreetMap - fond GéoPicardie en niveaux de gris"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.grey.png"
-                url="http://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geopicardie.fr/mapproxy/service"
                 layers="grey"
                 format="image/png"
                 tiled="false"
@@ -70,31 +70,11 @@
                 visible="false"/>
         <baselayer
                 type="OSM"
-                id="stamen2"
-                label="Watercolor"
-                title="Stamen Design"
-                thumbgallery="img/basemap/watercolor.jpg"
-                url="http://{a-c}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg"
-                maxzoom="20"
-                visible="false"
-                attribution="Map tiles by &lt;a href='http://stamen.com/'&gt;Stamen Design &lt;/a&gt;, under &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;CC BY 3.0 &lt;/a&gt;"/>
-        <baselayer
-                type="OSM"
-                id="stamen1"
-                label="Toner-lite"
-                title="Stamen Design"
-                thumbgallery="img/basemap/toner-lite.png"
-                url="http://{a-d}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png"
-                maxzoom="20"
-                visible="false"
-                attribution="Map tiles by &lt;a href='http://stamen.com/'&gt;Stamen Design &lt;/a&gt;, under &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;CC BY 3.0 &lt;/a&gt;"/>
-        <baselayer
-                type="OSM"
                 id="darkmatter"
                 label="Dark Matter"
                 title="CartoDb"
                 thumbgallery="img/basemap/darkmatter.png"
-                url="http://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
+                url="https://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"
                 maxzoom="20"
                 visible="true"
                 attribution="Map tiles by &lt;a href='http://cartodb.com/attributions'&gt;CartoDb &lt;/a&gt;, under &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;CC BY 3.0 &lt;/a&gt;"/>
@@ -104,7 +84,7 @@
                 label="Positron"
                 title="CartoDb"
                 thumbgallery="img/basemap/positron.png"
-                url="http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
+                url="https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
                 maxzoom="20"
                 visible="false"
                 attribution="Map tiles by &lt;a href='http://cartodb.com/attributions'&gt;CartoDb &lt;/a&gt;, under &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;CC BY 3.0 &lt;/a&gt;"/>
@@ -116,7 +96,7 @@
         enabled="true"/>
     <proxy url="../proxy/?url="/>
     <olscompletion
-        url="http://api-adresse.data.gouv.fr/search/"
+        url="https://api-adresse.data.gouv.fr/search/"
         type="ban"
         attribution="La recherche d'adresse est un service proposé par l'API adresse.data.gouv.fr"/>
     <searchparameters
@@ -140,34 +120,34 @@
                 legendurl=""
                 url="./apps/lycees/data/lycees.kml"
                 attribution="Région Hauts-de-France"
-                metadata="http://applications.region-bretagne.fr/geonetwork/?uuid=99e78163-ce9a-4eee-9ea0-36afc2a53d25"
-                metadata-csw="http://applications.region-bretagne.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=99e78163-ce9a-4eee-9ea0-36afc2a53d25"/>
+                metadata="https://www.geopicardie.fr/geonetwork/srv/fre/catalog.search?ticket=ST-39-GWbCaxO456AB7IYJbo2I-www.geopicardie.fr#/metadata/b13e50c5-518d-40f4-abd6-e33be37b20c3"
+                metadata-csw="https://www.geopicardie.fr/geonetwork/srv/fre/xml.metadata.get?uuid=b13e50c5-518d-40f4-abd6-e33be37b20c3"/>
         </theme>
         <theme name="Limites administratives"  collapsed="true" id="territoire">
             <layer id="ign_bdtopo_departements_pic" name="Départements de Picardie" visible="true" tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/autres_wms_only/ows"
+                url="https://www.geopicardie.fr/geoserver/autres_wms_only/ows"
                 style="dept_bdtopo_trait_noir_etiquette"
                 opacity="0.75"
                 attribution="IGN - BDTOPO"
-                metadata="http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=xxx"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=xxx" />
+                metadata="https://www.geopicardie.fr/geonetwork/srv/eng/catalog.search?node=srv#/metadata/IGNF_BDTOPOr_2-0.xml"
+                metadata-csw="https://www.geopicardie.fr/geonetwork/srv/eng/xml.metadata.get?uuid=IGNF_BDTOPOr_2-0.xml" />
             <layer id="osm_epci_reels_2015" name="EPCI de Picardie" visible="false" tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/autres/ows"
+                url="https://www.geopicardie.fr/geoserver/autres/ows"
                 style="polygone_bord_noir"
                 opacity="0.75"
                 attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
                 metadata="https://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
+                metadata-csw="https://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
             <layer id="osm_communes_complet_2015" name="Communes de Picardie" visible="false" tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/autres/ows"
+                url="https://www.geopicardie.fr/geoserver/autres/ows"
                 style="polygone_bord_noir"
                 opacity="0.75"
                 attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
                 metadata="https://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
+                metadata-csw="https://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
         </theme>
         <theme name="Photographies aériennes"  collapsed="true" id="ortho">
             <layer id="ortho_2015_rgb" name="Orthophotographie du Nord Pas de Calais 2015" visible="false" tiled="true"
@@ -179,11 +159,11 @@
                 metadata-csw="https://open.isogeo.com/api/resources/30059a7247474b559830e0fe525191d1.xml?s=cc1ba385918d40cc8078063121873550&amp;token=m0_ZBCtJU3nJj1S3Q2FIAa6u_KZ70" />
             <layer id="picardie_ortho_ign_2013_vis" name="Orthophotographie de la Picardie 2013" visible="false" tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/geopicardie/ows"
+                url="https://www.geopicardie.fr/geoserver/geopicardie/ows"
                 opacity="0.50"
                 attribution="IGN - GéoPicardie"
-                metadata="http://www.geopicardie.fr/geonetwork/srv/fre/xml_iso19139?uuid=1e8a0bc9-400a-4959-b3c8-3b46757fde96"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=1e8a0bc9-400a-4959-b3c8-3b46757fde96" />
+                metadata="https://www.geopicardie.fr/geonetwork/srv/fre/xml_iso19139?uuid=1e8a0bc9-400a-4959-b3c8-3b46757fde96"
+                metadata-csw="https://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=1e8a0bc9-400a-4959-b3c8-3b46757fde96" />
         </theme>
     </themes>
 </config>

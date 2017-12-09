@@ -32,7 +32,7 @@
                 label="OSM - GéoPicardie fond contrasté"
                 title="OpenStreetMap - fond GéoPicardie contrasté"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.bright.png"
-                url="http://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geopicardie.fr/mapproxy/service"
                 layers="bright"
                 format="image/png"
                 tiled="false"
@@ -44,7 +44,7 @@
                 label="OSM - GéoPicardie fond délavé"
                 title="OpenStreetMap - fond GéoPicardie en demi-teintes"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.faded.png"
-                url="http://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geopicardie.fr/mapproxy/service"
                 layers="faded"
                 format="image/png"
                 tiled="false"
@@ -56,22 +56,12 @@
                 label="OSM - GéoPicardie fond en niveaux de gris"
                 title="OpenStreetMap - fond GéoPicardie en niveaux de gris"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.grey.png"
-                url="http://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geopicardie.fr/mapproxy/service"
                 layers="grey"
                 format="image/png"
                 tiled="false"
                 attribution="Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'&gt;OpenStreetMap &lt;/a&gt;,  &lt;a href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a&gt;"
                 visible="false"/>
-        <baselayer
-                type="OSM"
-                id="stamen1"
-                label="Toner-lite"
-                title="Stamen Design"
-                thumbgallery="img/basemap/toner-lite.png"
-                url="http://{a-d}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png"
-                maxzoom="20"
-                visible="false"
-                attribution="Map tiles by &lt;a href='http://stamen.com/'&gt;Stamen Design &lt;/a&gt;, under &lt;a href='http://creativecommons.org/licenses/by/3.0/'&gt;CC BY 3.0 &lt;/a&gt;"/>
     </baselayers>
     <authentification
         url="who"
@@ -80,7 +70,7 @@
         enabled="true"/>
     <proxy url="../proxy/?url="/>
     <olscompletion
-        url="http://api-adresse.data.gouv.fr/search/"
+        url="https://api-adresse.data.gouv.fr/search/"
         type="ban"
         attribution="La recherche d'adresse est un service proposé par l'API adresse.data.gouv.fr"/>
     <searchparameters
@@ -121,7 +111,7 @@
                 visible="true"
                 tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/autres_wms_only/ows"
+                url="https://www.geopicardie.fr/geoserver/autres_wms_only/ows"
                 style="dept_bdtopo_trait_noir_etiquette"
                 opacity="0.75"
                 attribution="IGN - BDTOPO"
@@ -135,7 +125,7 @@
                 visible="true"
                 tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/autres/ows"
+                url="https://www.geopicardie.fr/geoserver/autres/ows"
                 style="polygone_bord_noir"
                 opacity="0.33"
                 attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
@@ -149,7 +139,7 @@
                 visible="true"
                 tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/autres/ows"
+                url="https://www.geopicardie.fr/geoserver/autres/ows"
                 style="polygone_bord_noir"
                 opacity="0.60"
                 attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
@@ -166,7 +156,7 @@
                 metadata-csw="https://open.isogeo.com/api/resources/30059a7247474b559830e0fe525191d1.xml?s=cc1ba385918d40cc8078063121873550&amp;token=m0_ZBCtJU3nJj1S3Q2FIAa6u_KZ70" />
             <layer id="picardie_ortho_ign_2013_vis" name="Orthophotographie de la Picardie 2013" visible="false" tiled="true"
                 queryable="false"
-                url="http://www.geopicardie.fr/geoserver/geopicardie/ows"
+                url="https://www.geopicardie.fr/geoserver/geopicardie/ows"
                 opacity="0.50"
                 attribution="IGN - GéoPicardie"
                 metadata="http://www.geopicardie.fr/geonetwork/srv/fre/xml_iso19139?uuid=1e8a0bc9-400a-4959-b3c8-3b46757fde96"
