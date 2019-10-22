@@ -10,13 +10,13 @@ var map_options = {
         "https://www.geopicardie.fr/geoserver/wms?", {
                 layers: 'agglo_st_quentin:agglo_st_quentin_ortho_2012_vis',
                 format: 'image/jpeg',
-                attribution: "GéoPicardie"
+                attribution: "Géo2France"
             }),
-    "OpenStreetMap - GéoPicardie": new L.tileLayer.wms(
-        "https://osm.geopicardie.fr/mapproxy/service?", {
+    "OpenStreetMap - Géo2France": new L.tileLayer.wms(
+        "https://osm.geo2france.fr/mapproxy/service?", {
           layers: 'bright',
           format: 'image/jpeg',
-          attribution: "OpenStreetMap - GéoPicardie"
+          attribution: "OpenStreetMap - Géo2France"
         })
 	},
 	"init_view": {

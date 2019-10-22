@@ -29,10 +29,10 @@
         <baselayer
                 type="WMS"
                 id="osm-geopic-bright-wms"
-                label="OSM - GéoPicardie fond contrasté"
-                title="OpenStreetMap - fond GéoPicardie contrasté"
+                label="OSM - Géo2France fond contrasté"
+                title="OpenStreetMap - fond Géo2France contrasté"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.bright.png"
-                url="https://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geo2france.fr/mapproxy/service"
                 layers="bright"
                 format="image/png"
                 tiled="false"
@@ -41,10 +41,10 @@
         <baselayer
                 type="WMS"
                 id="osm-geopic-faded-wms"
-                label="OSM - GéoPicardie fond délavé"
-                title="OpenStreetMap - fond GéoPicardie en demi-teintes"
+                label="OSM - Géo2France fond délavé"
+                title="OpenStreetMap - fond Géo2France en demi-teintes"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.faded.png"
-                url="https://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geo2france.fr/mapproxy/service"
                 layers="faded"
                 format="image/png"
                 tiled="false"
@@ -53,10 +53,10 @@
         <baselayer
                 type="WMS"
                 id="osm-geopic-grey-wms"
-                label="OSM - GéoPicardie fond en niveaux de gris"
-                title="OpenStreetMap - fond GéoPicardie en niveaux de gris"
+                label="OSM - Géo2France fond en niveaux de gris"
+                title="OpenStreetMap - fond Géo2France en niveaux de gris"
                 thumbgallery="apps/eolien/basemap/osm.geopicardie.grey.png"
-                url="https://osm.geopicardie.fr/mapproxy/service"
+                url="https://osm.geo2france.fr/mapproxy/service"
                 layers="grey"
                 format="image/png"
                 tiled="false"
@@ -115,8 +115,8 @@
                 style="dept_bdtopo_trait_noir_etiquette"
                 opacity="0.75"
                 attribution="IGN - BDTOPO"
-                metadata="http://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=xxx"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=xxx" />
+                metadata="https://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=xxx"
+                metadata-csw="https://www.geo2france.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=xxx" />
             <layer
                 id="osm_epci_reels_2015"
                 name="EPCI de Picardie"
@@ -129,8 +129,8 @@
                 style="polygone_bord_noir"
                 opacity="0.33"
                 attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
-                metadata="https://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
+                metadata="https://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
+                metadata-csw="https://www.geo2france.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
             <layer
                 id="osm_communes_complet_2015"
                 name="Communes de Picardie"
@@ -143,8 +143,8 @@
                 style="polygone_bord_noir"
                 opacity="0.60"
                 attribution="Contributeurs d'OpenStreetMap et Région Hauts-de-France"
-                metadata="https://www.geopicardie.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
+                metadata="https://www.geo2france.fr/geonetwork/apps/georchestra/?uuid=e9bdc018-7689-4f0a-9761-d2548c4a14ba"
+                metadata-csw="https://www.geo2france.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=e9bdc018-7689-4f0a-9761-d2548c4a14ba" />
         </theme>
         <theme name="Photographies aériennes"  collapsed="true" id="ortho">
             <layer id="ortho_2015_rgb" name="Orthophotographie du Nord Pas de Calais 2015" visible="false" tiled="true"
@@ -159,8 +159,8 @@
                 url="https://www.geopicardie.fr/geoserver/geopicardie/ows"
                 opacity="0.50"
                 attribution="IGN - GéoPicardie"
-                metadata="http://www.geopicardie.fr/geonetwork/srv/fre/xml_iso19139?uuid=1e8a0bc9-400a-4959-b3c8-3b46757fde96"
-                metadata-csw="http://www.geopicardie.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=1e8a0bc9-400a-4959-b3c8-3b46757fde96" />
+                metadata="https://www.geo2france.fr/geonetwork/srv/fre/xml_iso19139?uuid=1e8a0bc9-400a-4959-b3c8-3b46757fde96"
+                metadata-csw="https://www.geo2france.fr/geonetwork/srv/eng/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;elementSetName=full&amp;ID=1e8a0bc9-400a-4959-b3c8-3b46757fde96" />
         </theme>
     </themes>
 </config>

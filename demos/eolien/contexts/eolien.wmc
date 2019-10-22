@@ -11,10 +11,10 @@
   <LayerList>
     <Layer queryable="0" hidden="1">
       <Server service="OGC:WMS" version="1.1.1">
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://osm.geopicardie.fr/mapproxy/service?SERVICE=WMS&amp;"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://osm.geo2france.fr/mapproxy/service?SERVICE=WMS&amp;"/>
       </Server>
       <Name>faded</Name>
-      <Title>Fond OSM GéoPicardie</Title>
+      <Title>Fond OSM Géo2France</Title>
       <FormatList>
         <Format current="1">image/jpeg</Format>
       </FormatList>

@@ -12,15 +12,15 @@ $(document).ready(function() {
         attribution: "GéoPicardie"
     });
 
-    var osm_layer = L.tileLayer.wms("https://osm.geopicardie.fr/mapproxy/service?", {
+    var osm_layer = L.tileLayer.wms("https://osm.geo2france.fr/mapproxy/service?", {
         layers: 'bright',
         format: 'image/jpeg',
-        attribution: "OpenStreetMap - GéoPicardie"
+        attribution: "OpenStreetMap - Géo2France"
     });
 
     var baseMaps = {
         "Scan25 IGN": scan25_layer,
-        "OpenStreetMap - GéoPicardie": osm_layer,
+        "OpenStreetMap - Géo2France": osm_layer,
         "Images aériennes - GéoPicardie": ortho_layer
     };
 

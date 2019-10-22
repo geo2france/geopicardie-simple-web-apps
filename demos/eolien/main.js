@@ -75,7 +75,7 @@ $(window).on('load', function() {
         //  map.addControl(new OpenLayers.Control.LayerSwitcher());
             map.zoomTo(4);
 
-            selectBackgroundLayer("Fond OSM GéoPicardie");
+            selectBackgroundLayer("Fond OSM Géo2France");
 
         })
     };

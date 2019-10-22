@@ -6,11 +6,11 @@ var map_options = {
           format: 'image/jpeg',
           attribution: "Scan25 - IGN"
         }),
-    "OpenStreetMap - GéoPicardie": new L.tileLayer.wms(
-        "https://osm.geopicardie.fr/mapproxy/service?", {
+    "OpenStreetMap - Géo2France": new L.tileLayer.wms(
+        "https://osm.geo2france.fr/mapproxy/service?", {
           layers: 'bright',
           format: 'image/jpeg',
-          attribution: "OpenStreetMap - GéoPicardie"
+          attribution: "OpenStreetMap - Géo2France"
         }),
     "Images aériennes - GéoPicardie": new L.tileLayer.wms(
         "https://www.geopicardie.fr/geoserver/wms?", {
@@ -30,6 +30,6 @@ var map_options = {
 
 var base_map_layer_ids = {
   "Scan25 IGN": "scan25",
-  "OpenStreetMap - GéoPicardie": "geopicosm",
+  "OpenStreetMap - Géo2France": "geopicosm",
   "Images aériennes - GéoPicardie": "geopicortho"
 };

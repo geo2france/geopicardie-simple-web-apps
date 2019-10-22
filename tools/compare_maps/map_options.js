@@ -6,23 +6,23 @@ var map_options_left = {
                 format: 'image/jpeg',
                 attribution: "Scan25 - IGN"
             }),
-        "OpenStreetMap contrasté - GéoPicardie": new L.tileLayer.wms(
-            "https://osm.geopicardie.fr/mapproxy/service?", {
+        "OpenStreetMap contrasté - Géo2France": new L.tileLayer.wms(
+            "https://osm.geo2france.fr/mapproxy/service?", {
               layers: 'bright',
               format: 'image/jpeg',
-              attribution: "OpenStreetMap - GéoPicardie"
+              attribution: "OpenStreetMap - Géo2France"
             }),
-        "OpenStreetMap gris - GéoPicardie": new L.tileLayer.wms(
-            "https://osm.geopicardie.fr/mapproxy/service?", {
+        "OpenStreetMap gris - Géo2France": new L.tileLayer.wms(
+            "https://osm.geo2france.fr/mapproxy/service?", {
               layers: 'grey',
               format: 'image/jpeg',
-              attribution: "OpenStreetMap - GéoPicardie"
+              attribution: "OpenStreetMap - Géo2France"
             }),
-        "OpenStreetMap naturaliste - GéoPicardie": new L.tileLayer.wms(
-            "https://osm.geopicardie.fr/mapproxy/service?", {
+        "OpenStreetMap naturaliste - Géo2France": new L.tileLayer.wms(
+            "https://osm.geo2france.fr/mapproxy/service?", {
               layers: 'naturaliste',
               format: 'image/jpeg',
-              attribution: "OpenStreetMap - GéoPicardie"
+              attribution: "OpenStreetMap - Géo2France"
             }),
         "Images aériennes 2002 - GéoPicardie": new L.tileLayer.wms(
             "https://www.geopicardie.fr/geoserver/wms?", {
@@ -78,23 +78,23 @@ var map_options_right = {
                 format: 'image/jpeg',
                 attribution: "Scan25 - IGN"
             }),
-        "OpenStreetMap contrasté - GéoPicardie": new L.tileLayer.wms(
-            "https://osm.geopicardie.fr/mapproxy/service?", {
+        "OpenStreetMap contrasté - Géo2France": new L.tileLayer.wms(
+            "https://osm.geo2france.fr/mapproxy/service?", {
               layers: 'bright',
               format: 'image/jpeg',
-              attribution: "OpenStreetMap - GéoPicardie"
+              attribution: "OpenStreetMap - Géo2France"
             }),
-        "OpenStreetMap gris - GéoPicardie": new L.tileLayer.wms(
-            "https://osm.geopicardie.fr/mapproxy/service?", {
+        "OpenStreetMap gris - Géo2France": new L.tileLayer.wms(
+            "https://osm.geo2france.fr/mapproxy/service?", {
               layers: 'grey',
               format: 'image/jpeg',
-              attribution: "OpenStreetMap - GéoPicardie"
+              attribution: "OpenStreetMap - Géo2France"
             }),
-        "OpenStreetMap naturaliste - GéoPicardie": new L.tileLayer.wms(
-            "https://osm.geopicardie.fr/mapproxy/service?", {
+        "OpenStreetMap naturaliste - Géo2France": new L.tileLayer.wms(
+            "https://osm.geo2france.fr/mapproxy/service?", {
               layers: 'naturaliste',
               format: 'image/jpeg',
-              attribution: "OpenStreetMap - GéoPicardie"
+              attribution: "OpenStreetMap - Géo2France"
             }),
         "Images aériennes 2002 - GéoPicardie": new L.tileLayer.wms(
             "https://www.geopicardie.fr/geoserver/wms?", {
