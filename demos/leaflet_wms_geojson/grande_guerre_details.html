@@ -132,16 +132,29 @@
 			L.control.layers(baseMaps).addTo(map);
 
 
-  		var lightIcon  = L.Icon.Default.extend({options: {
-  			iconUrl: 'images/marker-icon-red-white-border.png',
-  		  iconSize: [33, 49],
-    		iconAnchor: [16, 45]}});
-  		var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-red-white-border.png',
-  		  iconSize: [33, 49],
-    		iconAnchor: [16, 45]}});
-  		var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-red-white-border.png',
-  		  iconSize: [33, 49],
-    		iconAnchor: [16, 45]}});
+			delete L.Icon.Default.prototype._getIconUrl
+			var lightIcon  = L.Icon.Default.extend({options: {
+				iconUrl: 'images/marker-icon-red-white-border.png',
+				iconRetinaUrl: 'images/marker-icon-2x.png',
+				shadowUrl: 'images/marker-shadow.png',
+				iconSize: [33, 49],
+				iconAnchor: [16, 45]
+			}});
+			var normalIcon  = L.Icon.Default.extend({options: {
+				iconUrl: 'images/marker-icon-red-white-border.png',
+				iconRetinaUrl: 'images/marker-icon-2x.png',
+				shadowUrl: 'images/marker-shadow.png',
+				iconSize: [33, 49],
+				iconAnchor: [16, 45]
+			}});
+			var darkIcon  = L.Icon.Default.extend({options: {
+				iconUrl: 'images/marker-icon-red-white-border.png',
+				iconRetinaUrl: 'images/marker-icon-2x.png',
+				shadowUrl: 'images/marker-shadow.png',
+				iconSize: [33, 49],
+				iconAnchor: [16, 45]
+			}});
+
 			var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 25});
 
 			$.getJSON('data/grande_guerre.js', function(data) {

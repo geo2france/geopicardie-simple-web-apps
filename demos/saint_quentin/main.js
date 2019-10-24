@@ -22,9 +22,23 @@ $(document).ready(function() {
 	var subsetDefaultWidth = 0.002; // in degrees
 
 	var markerLayer = null;
-	var lightIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-bright.png'}});
-	var normalIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon.png'}});
-	var darkIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-dark.png'}});
+
+    delete L.Icon.Default.prototype._getIconUrl
+	var lightIcon  = L.Icon.Default.extend({options: {
+	    iconUrl: 'images/marker-icon-bright.png',
+        iconRetinaUrl: 'images/marker-icon-2x.png',
+        shadowUrl: 'images/marker-shadow.png'
+	}});
+	var normalIcon  = L.Icon.Default.extend({options: {
+	    iconUrl: 'images/marker-icon.png',
+        iconRetinaUrl: 'images/marker-icon-2x.png',
+        shadowUrl: 'images/marker-shadow.png'
+	}});
+	var darkIcon  = L.Icon.Default.extend({options: {
+	    iconUrl: 'images/marker-icon-dark.png',
+        iconRetinaUrl: 'images/marker-icon-2x.png',
+        shadowUrl: 'images/marker-shadow.png'
+	}});
 
 	var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 40});
 

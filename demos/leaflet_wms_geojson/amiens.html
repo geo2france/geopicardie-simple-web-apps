@@ -61,9 +61,9 @@
 			L.control.layers(baseMapLayers, overlayLayers).addTo(map);
 
 
-  		var lightIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-orange.png'}});
-  		var normalIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-orange.png'}});
-  		var darkIcon  = L.Icon.Default.extend({options: {iconUrl: 'images/marker-icon-orange.png'}});
+  		var lightIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-orange.png'}});
+  		var normalIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-orange.png'}});
+  		var darkIcon  = L.Icon.Default.extend({options: {iconUrl: '../images/marker-icon-orange.png'}});
 			var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, nearbyDistance: 25});
 
 			$.getJSON('data/amiens.js', function(data) {
