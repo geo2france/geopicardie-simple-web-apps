@@ -162,7 +162,7 @@
       <Name>geopicardie:vent40m</Name>
       <Title>Modélisation de la vitesse du vent à 40 m en Picardie</Title>
       <MetadataURL>
-        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geopicardie.fr/geonetwork/srv/fre/catalog.search#/metadata/95073ac5-8d9b-49dd-8319-2dbedb5836dd"/>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.geo2france.fr/geonetwork/srv/fre/catalog.search#/metadata/95073ac5-8d9b-49dd-8319-2dbedb5836dd"/>
       </MetadataURL>
       <FormatList>
         <Format current="1">image/jpeg</Format>
